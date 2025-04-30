@@ -88,11 +88,6 @@ public class Ventana_Principal extends JFrame {
 		contentPane.add(btn_Prestamos_Libros);
 		
 		JButton btn_Consultas_Usuario = new JButton("Consultas de clientes");
-		btn_Consultas_Usuario.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-			}
-		});
 		btn_Consultas_Usuario.setBackground(new Color(255, 128, 128));
 		btn_Consultas_Usuario.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btn_Consultas_Usuario.setBounds(377, 274, 314, 106);
