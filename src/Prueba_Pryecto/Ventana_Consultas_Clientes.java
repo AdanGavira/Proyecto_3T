@@ -1,4 +1,4 @@
-package Pruebas_del_Proyecto;
+package Prueba_Pryecto;
 
 import java.awt.EventQueue;
 
