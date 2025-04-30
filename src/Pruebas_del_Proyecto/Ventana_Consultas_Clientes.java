@@ -66,7 +66,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 			public void actionPerformed(ActionEvent e) 
 			{
 				Ventana_Buscar_Libros B1 = new Ventana_Buscar_Libros();
-				B1.setVisible(true);
+				B1.setVisible(false);
 			}
 		});
 		btn_BuscarLibros.setFont(new Font("Tahoma", Font.PLAIN, 30));
