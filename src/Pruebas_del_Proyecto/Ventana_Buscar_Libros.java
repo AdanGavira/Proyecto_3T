@@ -13,6 +13,8 @@ import javax.swing.JTextField;
 import javax.swing.JTextArea;
 import javax.swing.JList;
 import javax.swing.SwingConstants;
+import javax.swing.JMenu;
+import javax.swing.JMenuItem;
 
 public class Ventana_Buscar_Libros extends JFrame {
 
@@ -55,7 +57,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 		
 		JButton btn_Buscar = new JButton("Buscar");
 		btn_Buscar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btn_Buscar.setBounds(492, 87, 118, 30);
+		btn_Buscar.setBounds(559, 87, 118, 30);
 		contentPane.add(btn_Buscar);
 		
 		JTextArea textArea = new JTextArea();
@@ -63,14 +65,22 @@ public class Ventana_Buscar_Libros extends JFrame {
 		contentPane.add(textArea);
 		
 		textField = new JTextField();
-		textField.setBounds(189, 87, 287, 30);
+		textField.setBounds(262, 87, 287, 30);
 		contentPane.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_1 = new JLabel("Descripción");
-		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lblNewLabel_1.setBounds(55, 87, 124, 27);
-		contentPane.add(lblNewLabel_1);
+		JLabel lbl_Filtro = new JLabel("Filtro");
+		lbl_Filtro.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_Filtro.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		lbl_Filtro.setBounds(10, 89, 124, 27);
+		contentPane.add(lbl_Filtro);
+		
+		JMenu mn_Filtros = new JMenu("Selecciona");
+		mn_Filtros.setHorizontalAlignment(SwingConstants.CENTER);
+		mn_Filtros.setBounds(116, 91, 117, 26);
+		contentPane.add(mn_Filtros);
+		
+		JMenuItem mntm_Nombre = new JMenuItem("Nombre");
+		mn_Filtros.add(mntm_Nombre);
 	}
 }
