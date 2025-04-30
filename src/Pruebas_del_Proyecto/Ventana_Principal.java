@@ -60,6 +60,13 @@ public class Ventana_Principal extends JFrame {
 		btn_Consulta_Libros.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btn_Consulta_Libros.setBounds(40, 139, 314, 94);
 		contentPane.add(btn_Consulta_Libros);
+		btn_Consulta_Libros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Ventana_Consultas_Clientes C1 = new Ventana_Consultas_Clientes();
+				C1.setVisible(true);
+			}
+		});
 		
 		JButton btn_Registro_Usuarios = new JButton("Registro de clientes");
 		btn_Registro_Usuarios.addActionListener(new ActionListener() {
@@ -84,8 +91,6 @@ public class Ventana_Principal extends JFrame {
 		btn_Consultas_Usuario.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Ventana_Consultas_Clientes C1 = new Ventana_Consultas_Clientes();
-				C1.setVisible(true);
 			}
 		});
 		btn_Consultas_Usuario.setBackground(new Color(255, 128, 128));
