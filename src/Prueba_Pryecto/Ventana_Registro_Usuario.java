@@ -5,8 +5,12 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import com.toedter.calendar.JCalendar;
+
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
@@ -49,6 +53,10 @@ public class Ventana_Registro_Usuario extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		
+		JCalendar calendar = new JCalendar();
+		calendar.setBounds(145, 50, 425, 249);
+		getContentPane().add(calendar, BorderLayout.CENTER);
 		
 		JLabel lbl_RegistroUsuarios = new JLabel("Registro de Usuarios");
 		lbl_RegistroUsuarios.setForeground(new Color(0, 0, 0));
