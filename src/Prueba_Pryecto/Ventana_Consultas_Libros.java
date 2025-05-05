@@ -14,7 +14,7 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Ventana_Consultas_Clientes extends JFrame {
+public class Ventana_Consultas_Libros extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -26,7 +26,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ventana_Consultas_Clientes frame = new Ventana_Consultas_Clientes();
+					Ventana_Consultas_Libros frame = new Ventana_Consultas_Libros();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -38,7 +38,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ventana_Consultas_Clientes() {
+	public Ventana_Consultas_Libros() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 697, 459);
 		contentPane = new JPanel();
