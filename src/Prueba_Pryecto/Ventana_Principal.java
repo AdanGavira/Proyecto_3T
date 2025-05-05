@@ -63,7 +63,7 @@ public class Ventana_Principal extends JFrame {
 		btn_Consulta_Libros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Ventana_Consultas_Clientes C1 = new Ventana_Consultas_Clientes();
+				Ventana_Consultas_Libros C1 = new Ventana_Consultas_Libros();
 				C1.setVisible(true);
 			}
 		});
