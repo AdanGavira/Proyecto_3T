@@ -118,12 +118,12 @@ public class Ventana_Registro_Usuario extends JFrame {
 		lbl_Nombre.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_Nombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setForeground(new Color(0, 128, 0));
-		btnNewButton.setBackground(new Color(0, 255, 0));
-		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btnNewButton.setBounds(190, 298, 89, 23);
-		panel.add(btnNewButton);
+		JButton btn_Enviar = new JButton("Enviar");
+		btn_Enviar.setForeground(new Color(0, 128, 0));
+		btn_Enviar.setBackground(new Color(0, 255, 0));
+		btn_Enviar.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		btn_Enviar.setBounds(190, 298, 89, 23);
+		panel.add(btn_Enviar);
 		
 		JSpinField spinField = new JSpinField();
 		spinField.setMinimum(1);
