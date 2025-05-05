@@ -10,11 +10,14 @@ import javax.swing.JLabel;
 import java.awt.Font;
 import java.awt.Color;
 import javax.swing.SwingConstants;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JTextField;
 import java.awt.event.ActionListener;
+import java.security.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.GridLayout;
+import java.awt.Image;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
@@ -45,23 +48,26 @@ public class Ventana_Principal extends JFrame {
 	 */
 	public Ventana_Principal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 1043, 529);
+		setBounds(100, 100, 1131, 912);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(new GridLayout(0, 2, 0, 0));
 		
-		JLabel lbl_titulo = new JLabel("LA BIBLIOTECA ");
-		lbl_titulo.setHorizontalAlignment(SwingConstants.RIGHT);
-		lbl_titulo.setBackground(new Color(240, 240, 240));
+		
+		JLabel lbl_titulo = new JLabel("LA BIBLIOTECA DEL GÉNESIS");
+		lbl_titulo.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_titulo.setBackground(new Color(245, 227, 200));
 		lbl_titulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		contentPane.add(lbl_titulo);
 		
-		JLabel lblDelGnesis = new JLabel(" DEL GÉNESIS");
-		lblDelGnesis.setHorizontalAlignment(SwingConstants.LEFT);
-		lblDelGnesis.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		contentPane.add(lblDelGnesis);
+		final JLabel lblDelGenesis = new JLabel("");
+		lblDelGenesis.setBackground(new Color(245, 227, 200));
+		lblDelGenesis.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDelGenesis.setIcon(new ImageIcon(Ventana_Principal.class.getResource("/image/Logotipo_Biblioteca_del_Génesis 256x256.png")));
+		lblDelGenesis.setBounds(0, 0, 1720, 900);
+		contentPane.add(lblDelGenesis);
 		
 		JButton btn_Consulta_Libros = new JButton(" Consultas de libros");
 		btn_Consulta_Libros.setBackground(new Color(255, 128, 128));
