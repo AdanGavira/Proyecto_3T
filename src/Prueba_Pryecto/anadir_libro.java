@@ -16,6 +16,8 @@ import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JComboBox;
+import javax.swing.DefaultComboBoxModel;
 
 public class anadir_libro extends JFrame {
 
@@ -87,24 +89,6 @@ public class anadir_libro extends JFrame {
 		textArea_Autor.setBounds(313, 115, 123, 23);
 		panel.add(textArea_Autor);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(323, 185, 101, 22);
-		panel.add(menuBar);
-		
-		// BARRA
-		
-		JMenu mn_Seleccionar = new JMenu("Seleccionar");
-		menuBar.add(mn_Seleccionar);
-		
-		JMenuItem mntm_Accion = new JMenuItem("Accion");
-		mn_Seleccionar.add(mntm_Accion);
-		
-		JMenuItem mntm_Terror = new JMenuItem("Terror");
-		mn_Seleccionar.add(mntm_Terror);
-		
-		JMenuItem mntm_Infantil = new JMenuItem("Infantil");
-		mn_Seleccionar.add(mntm_Infantil);
-		
 		// BOTONES
 		
 		JButton btn_AnadirLibro = new JButton("Añadir");
@@ -122,5 +106,10 @@ public class anadir_libro extends JFrame {
 		btn_EliminarCampos.setBackground(new Color(255, 0, 0));
 		btn_EliminarCampos.setBounds(313, 296, 130, 23);
 		panel.add(btn_EliminarCampos);
+		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Accion", "Drama", "Infantil", "Terror"}));
+		comboBox.setBounds(313, 187, 123, 22);
+		panel.add(comboBox);
 	}
 }

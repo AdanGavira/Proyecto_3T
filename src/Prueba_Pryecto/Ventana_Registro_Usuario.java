@@ -16,6 +16,10 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.JButton;
+import com.toedter.components.JSpinField;
+import com.toedter.calendar.JMonthChooser;
+import com.toedter.calendar.JYearChooser;
+import com.toedter.calendar.JDayChooser;
 
 public class Ventana_Registro_Usuario extends JFrame {
 
@@ -53,10 +57,6 @@ public class Ventana_Registro_Usuario extends JFrame {
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
-		
-		JCalendar calendar = new JCalendar();
-		calendar.setBounds(145, 50, 425, 249);
-		getContentPane().add(calendar, BorderLayout.CENTER);
 		
 		JLabel lbl_RegistroUsuarios = new JLabel("Registro de Usuarios");
 		lbl_RegistroUsuarios.setForeground(new Color(0, 0, 0));
@@ -124,5 +124,20 @@ public class Ventana_Registro_Usuario extends JFrame {
 		btnNewButton.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		btnNewButton.setBounds(190, 298, 89, 23);
 		panel.add(btnNewButton);
+		
+		JSpinField spinField = new JSpinField();
+		spinField.setMinimum(1);
+		spinField.setMaximum(31);
+		spinField.setBounds(175, 176, 44, 20);
+		panel.add(spinField);
+		
+		JMonthChooser monthChooser = new JMonthChooser();
+		monthChooser.setMonth(0);
+		monthChooser.setBounds(229, 176, 96, 20);
+		panel.add(monthChooser);
+		
+		JYearChooser yearChooser = new JYearChooser();
+		yearChooser.setBounds(335, 176, 78, 20);
+		panel.add(yearChooser);
 	}
 }
