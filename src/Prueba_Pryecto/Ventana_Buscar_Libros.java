@@ -19,6 +19,7 @@ import javax.swing.JMenu;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
+import javax.swing.DefaultComboBoxModel;
 
 public class Ventana_Buscar_Libros extends JFrame {
 
@@ -62,7 +63,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 		
 		JTextArea textArea = new JTextArea();
 		textArea.setEditable(false);
-		textArea.setBounds(20, 133, 629, 274);
+		textArea.setBounds(32, 128, 629, 274);
 		contentPane.add(textArea);
 		
 		textField_Valor = new JTextField();
@@ -90,43 +91,11 @@ public class Ventana_Buscar_Libros extends JFrame {
 		lbl_Filtro.setBounds(10, 89, 124, 27);
 		contentPane.add(lbl_Filtro);
 		
-		JMenuBar menuBar = new JMenuBar();
-		menuBar.setBounds(113, 87, 124, 35);
-		contentPane.add(menuBar);
-		
-		JMenu mn_Filtros = new JMenu("Seleccionar");
-		menuBar.add(mn_Filtros);
-		
-		JMenuItem mntm_Nombre = new JMenuItem("Nombre");
-		mntm_Nombre.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				mn_Filtros.setText(mntm_Nombre.getText());
-			}
-		});
-		mn_Filtros.add(mntm_Nombre);
-		
-		JMenuItem mntm_ID = new JMenuItem("ID");
-		mntm_ID.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				mn_Filtros.setText(mntm_ID.getText());
-			}
-		});
-		mn_Filtros.add(mntm_ID);
-		
-		JMenuItem mntm_Categoria = new JMenuItem("Categoria");
-		mntm_Categoria.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				mn_Filtros.setText(mntm_Categoria.getText());
-			}
-		});
-		mn_Filtros.add(mntm_Categoria);
-		
-		JMenuItem mntm_Autor = new JMenuItem("Autor");
-		mntm_Autor.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				mn_Filtros.setText(mntm_Autor.getText());
-			}
-		});
-		mn_Filtros.add(mntm_Autor);
+		JComboBox comboBox_Filtro = new JComboBox();
+		comboBox_Filtro.setFont(new Font("Arial", Font.BOLD, 15));
+		comboBox_Filtro.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "ID", "Categoría", "Autor"}));
+		comboBox_Filtro.setToolTipText("Seleccionar");
+		comboBox_Filtro.setBounds(124, 87, 111, 30);
+		contentPane.add(comboBox_Filtro);
 	}
 }
