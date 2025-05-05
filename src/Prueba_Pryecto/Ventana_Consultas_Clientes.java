@@ -6,6 +6,8 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
@@ -57,6 +59,21 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		contentPane.add(btn_AñadirLibros);
 		
 		JButton btn_EliminarLibros = new JButton("Eliminar Libros");
+		btn_EliminarLibros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Object[] opciones = {"Eliminar", "Cancelar"};
+				String id = (String)JOptionPane.showInputDialog(
+									btn_EliminarLibros,
+				                    "Introduce el ID del libro que quieres eliminar",
+				                    "Borrar libro",
+				                    JOptionPane.PLAIN_MESSAGE,
+				                    null,
+				                    null, 
+				                    isAlwaysOnTop()
+				                    );
+				//Añadir consulta de eliminación
+			}
+		});
 		btn_EliminarLibros.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		btn_EliminarLibros.setBounds(51, 261, 256, 60);
 		contentPane.add(btn_EliminarLibros);
