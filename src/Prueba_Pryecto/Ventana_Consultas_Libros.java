@@ -72,10 +72,16 @@ public class Ventana_Consultas_Libros extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btn_AñadirLibros = new JButton("Añadir Libros");
-		panel_1.add(btn_AñadirLibros);
-		btn_AñadirLibros.setBackground(new Color(255, 128, 128));
-		btn_AñadirLibros.setFont(new Font("Tahoma", Font.BOLD, 30));
+		JButton btn_AñadirLibro = new JButton("Añadir Libro");
+		btn_AñadirLibro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Ventana_Anadir_Libro anadir_libro = new Ventana_Anadir_Libro();
+				anadir_libro.setVisible(true);
+			}
+		});
+		panel_1.add(btn_AñadirLibro);
+		btn_AñadirLibro.setBackground(new Color(255, 128, 128));
+		btn_AñadirLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
 		JLabel label = new JLabel("");
 		panel_1.add(label);
@@ -102,14 +108,13 @@ public class Ventana_Consultas_Libros extends JFrame {
 		panel_3.setBounds(0, 316, 884, 62);
 		contentPane.add(panel_3);
 		
-		JButton btn_EliminarLibros = new JButton("Eliminar Libros");
-		panel_3.add(btn_EliminarLibros);
-		btn_EliminarLibros.setBackground(new Color(255, 128, 128));
-		btn_EliminarLibros.addActionListener(new ActionListener() {
+		JButton btn_EliminarLibro = new JButton("Eliminar Libro");
+		panel_3.add(btn_EliminarLibro);
+		btn_EliminarLibro.setBackground(new Color(255, 128, 128));
+		btn_EliminarLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Object[] opciones = {"Eliminar", "Cancelar"};
 				String id = (String)JOptionPane.showInputDialog(
-									btn_EliminarLibros,
+									btn_EliminarLibro,
 				                    "Introduce el ID del libro que quieres eliminar",
 				                    "Borrar libro",
 				                    JOptionPane.PLAIN_MESSAGE,
@@ -120,6 +125,6 @@ public class Ventana_Consultas_Libros extends JFrame {
 				//Añadir consulta de eliminación
 			}
 		});
-		btn_EliminarLibros.setFont(new Font("Tahoma", Font.BOLD, 30));
+		btn_EliminarLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
 	}
 }

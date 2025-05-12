@@ -20,6 +20,11 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
+import java.awt.FlowLayout;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public class Ventana_Buscar_Libros extends JFrame {
 
@@ -48,8 +53,9 @@ public class Ventana_Buscar_Libros extends JFrame {
 	 */
 	public Ventana_Buscar_Libros() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 703, 457);
+		setBounds(100, 100, 797, 493);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 128, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -57,47 +63,85 @@ public class Ventana_Buscar_Libros extends JFrame {
 		
 		setLocationRelativeTo(null);
 		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 789, 53);
+		contentPane.add(panel);
+		panel.setLayout(new GridLayout(0, 1, 0, 0));
+		
 		JLabel lbl_Titulo = new JLabel("Buscar Libros");
+		lbl_Titulo.setHorizontalAlignment(SwingConstants.CENTER);
+		panel.add(lbl_Titulo);
 		lbl_Titulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lbl_Titulo.setBounds(221, 11, 235, 42);
-		contentPane.add(lbl_Titulo);	
 		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 128, 192));
+		panel_1.setBounds(0, 61, 789, 56);
+		contentPane.add(panel_1);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{171, 171, 200, 176, 0};
+		gbl_panel_1.rowHeights = new int[]{56, 0};
+		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, 0.0, 0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_1.setLayout(gbl_panel_1);
 		
-		JTextArea textArea = new JTextArea();
-		textArea.setEditable(false);
-		textArea.setBounds(32, 128, 629, 274);
-		contentPane.add(textArea);
+		JLabel lbl_Filtro_1 = new JLabel("Filtro:");
+		lbl_Filtro_1.setHorizontalAlignment(SwingConstants.LEFT);
+		lbl_Filtro_1.setForeground(Color.WHITE);
+		lbl_Filtro_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		GridBagConstraints gbc_lbl_Filtro_1 = new GridBagConstraints();
+		gbc_lbl_Filtro_1.insets = new Insets(0, 0, 0, 5);
+		gbc_lbl_Filtro_1.gridx = 0;
+		gbc_lbl_Filtro_1.gridy = 0;
+		panel_1.add(lbl_Filtro_1, gbc_lbl_Filtro_1);
+		
+		JComboBox comboBox_Filtro_1 = new JComboBox();
+		comboBox_Filtro_1.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "Autor", "Categoría", "ID"}));
+		comboBox_Filtro_1.setToolTipText("Seleccionar");
+		comboBox_Filtro_1.setFont(new Font("Arial", Font.BOLD, 15));
+		GridBagConstraints gbc_comboBox_Filtro_1 = new GridBagConstraints();
+		gbc_comboBox_Filtro_1.fill = GridBagConstraints.HORIZONTAL;
+		gbc_comboBox_Filtro_1.insets = new Insets(0, 0, 0, 5);
+		gbc_comboBox_Filtro_1.gridx = 1;
+		gbc_comboBox_Filtro_1.gridy = 0;
+		panel_1.add(comboBox_Filtro_1, gbc_comboBox_Filtro_1);
 		
 		textField_Valor = new JTextField();
-		textField_Valor.setBounds(262, 87, 287, 30);
-		contentPane.add(textField_Valor);
 		textField_Valor.setColumns(10);
+		GridBagConstraints gbc_textField_Valor = new GridBagConstraints();
+		gbc_textField_Valor.fill = GridBagConstraints.HORIZONTAL;
+		gbc_textField_Valor.insets = new Insets(0, 0, 0, 5);
+		gbc_textField_Valor.gridx = 2;
+		gbc_textField_Valor.gridy = 0;
+		panel_1.add(textField_Valor, gbc_textField_Valor);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 128, 192));
+		panel_2.setBounds(10, 128, 761, 315);
+		contentPane.add(panel_2);
+		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JTextArea textArea = new JTextArea();
+		panel_2.add(textArea);
+		textArea.setEditable(false);
 		textArea.setVisible(false);
 		
-		JButton btn_Buscar = new JButton("Buscar");
-		btn_Buscar.addActionListener(new ActionListener() {
+		JButton btn_Buscar_1 = new JButton("Buscar");
+		btn_Buscar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setVisible(true);
-				textField_Valor.setText(null);
+				textField_Valor.setText(null);	
 			}
 		});
-		btn_Buscar.setForeground(new Color(255, 255, 255));
-		btn_Buscar.setBackground(new Color(255, 0, 0));
-		btn_Buscar.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		btn_Buscar.setBounds(559, 87, 118, 30);
-		contentPane.add(btn_Buscar);
+		btn_Buscar_1.setForeground(Color.WHITE);
+		btn_Buscar_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		btn_Buscar_1.setBackground(Color.RED);
+		GridBagConstraints gbc_btn_Buscar_1 = new GridBagConstraints();
+		gbc_btn_Buscar_1.fill = GridBagConstraints.BOTH;
+		gbc_btn_Buscar_1.gridx = 3;
+		gbc_btn_Buscar_1.gridy = 0;
+		panel_1.add(btn_Buscar_1, gbc_btn_Buscar_1);
 		
-		JLabel lbl_Filtro = new JLabel("Filtro:");
-		lbl_Filtro.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Filtro.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lbl_Filtro.setBounds(10, 89, 124, 27);
-		contentPane.add(lbl_Filtro);
 		
-		JComboBox comboBox_Filtro = new JComboBox();
-		comboBox_Filtro.setFont(new Font("Arial", Font.BOLD, 15));
-		comboBox_Filtro.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "ID", "Categoría", "Autor"}));
-		comboBox_Filtro.setToolTipText("Seleccionar");
-		comboBox_Filtro.setBounds(124, 87, 111, 30);
-		contentPane.add(comboBox_Filtro);
+		
 	}
 }
