@@ -13,6 +13,11 @@ import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.GridLayout;
+import java.awt.BorderLayout;
 
 public class Ventana_Consultas_Libros extends JFrame {
 
@@ -40,25 +45,66 @@ public class Ventana_Consultas_Libros extends JFrame {
 	 */
 	public Ventana_Consultas_Libros() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		setBounds(100, 100, 697, 459);
+		setBounds(100, 100, 900, 539);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 128, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
+		
+		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
+		JPanel panel = new JPanel();
+		panel.setBounds(0, 0, 884, 62);
+		contentPane.add(panel);
+		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
 		JLabel lblNewLabel = new JLabel("Consultas de Libros");
+		panel.add(lblNewLabel);
+		lblNewLabel.setBackground(new Color(240, 240, 240));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
-		lblNewLabel.setBounds(154, 11, 367, 67);
-		contentPane.add(lblNewLabel);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 128, 192));
+		panel_1.setBounds(0, 130, 884, 62);
+		contentPane.add(panel_1);
+		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btn_AñadirLibros = new JButton("Añadir Libros");
-		btn_AñadirLibros.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btn_AñadirLibros.setBounds(389, 261, 207, 60);
-		contentPane.add(btn_AñadirLibros);
+		panel_1.add(btn_AñadirLibros);
+		btn_AñadirLibros.setBackground(new Color(255, 128, 128));
+		btn_AñadirLibros.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		JLabel label = new JLabel("");
+		panel_1.add(label);
+		
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 128, 192));
+		panel_2.setBounds(0, 218, 884, 62);
+		contentPane.add(panel_2);
+		
+		JButton btn_BuscarLibros = new JButton("Buscar Libros");
+		panel_2.add(btn_BuscarLibros);
+		btn_BuscarLibros.setBackground(new Color(255, 128, 128));
+		btn_BuscarLibros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Ventana_Buscar_Libros B1 = new Ventana_Buscar_Libros();
+				B1.setVisible(true);
+			}
+		});
+		btn_BuscarLibros.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(0, 128, 192));
+		panel_3.setBounds(0, 316, 884, 62);
+		contentPane.add(panel_3);
 		
 		JButton btn_EliminarLibros = new JButton("Eliminar Libros");
+		panel_3.add(btn_EliminarLibros);
+		btn_EliminarLibros.setBackground(new Color(255, 128, 128));
 		btn_EliminarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Object[] opciones = {"Eliminar", "Cancelar"};
@@ -74,20 +120,6 @@ public class Ventana_Consultas_Libros extends JFrame {
 				//Añadir consulta de eliminación
 			}
 		});
-		btn_EliminarLibros.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btn_EliminarLibros.setBounds(51, 261, 256, 60);
-		contentPane.add(btn_EliminarLibros);
-		
-		JButton btn_BuscarLibros = new JButton("Buscar Libros");
-		btn_BuscarLibros.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				Ventana_Buscar_Libros B1 = new Ventana_Buscar_Libros();
-				B1.setVisible(true);
-			}
-		});
-		btn_BuscarLibros.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		btn_BuscarLibros.setBounds(240, 135, 216, 58);
-		contentPane.add(btn_BuscarLibros);
+		btn_EliminarLibros.setFont(new Font("Tahoma", Font.BOLD, 30));
 	}
 }

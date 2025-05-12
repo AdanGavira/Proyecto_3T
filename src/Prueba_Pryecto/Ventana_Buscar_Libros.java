@@ -55,6 +55,8 @@ public class Ventana_Buscar_Libros extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		setLocationRelativeTo(null);
+		
 		JLabel lbl_Titulo = new JLabel("Buscar Libros");
 		lbl_Titulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		lbl_Titulo.setBounds(221, 11, 235, 42);
