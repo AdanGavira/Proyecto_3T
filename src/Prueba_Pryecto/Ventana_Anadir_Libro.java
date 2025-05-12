@@ -19,7 +19,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
 
-public class anadir_libro extends JFrame {
+public class Ventana_Anadir_Libro extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -31,7 +31,7 @@ public class anadir_libro extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					anadir_libro frame = new anadir_libro();
+					Ventana_Anadir_Libro frame = new Ventana_Anadir_Libro();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -43,8 +43,8 @@ public class anadir_libro extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public anadir_libro() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public Ventana_Anadir_Libro() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 844, 522);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
