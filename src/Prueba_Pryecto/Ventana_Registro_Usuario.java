@@ -58,6 +58,8 @@ public class Ventana_Registro_Usuario extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		setLocationRelativeTo(null);
+		
 		JLabel lbl_RegistroUsuarios = new JLabel("Registro de Usuarios");
 		lbl_RegistroUsuarios.setForeground(new Color(0, 0, 0));
 		lbl_RegistroUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
@@ -69,8 +71,8 @@ public class Ventana_Registro_Usuario extends JFrame {
 		
 		JLabel lbl_DatosGenerales = new JLabel("Datos Generales");
 		lbl_DatosGenerales.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		lbl_DatosGenerales.setBounds(54, 108, 162, 35);
+		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lbl_DatosGenerales.setBounds(54, 108, 193, 35);
 		contentPane.add(lbl_DatosGenerales);
 		
 		JPanel panel = new JPanel();
@@ -139,5 +141,9 @@ public class Ventana_Registro_Usuario extends JFrame {
 		JYearChooser yearChooser = new JYearChooser();
 		yearChooser.setBounds(335, 176, 78, 20);
 		panel.add(yearChooser);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(36, 11, 310, 57);
+		contentPane.add(panel_1);
 	}
 }
