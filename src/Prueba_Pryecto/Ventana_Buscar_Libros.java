@@ -95,7 +95,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 		panel_1.add(lbl_Filtro_1, gbc_lbl_Filtro_1);
 		
 		JComboBox comboBox_Filtro_1 = new JComboBox();
-		comboBox_Filtro_1.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "Autor", "Categoría", "ID"}));
+		comboBox_Filtro_1.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "Autor", "Categoría", "ID", "Prestados", "Todo"}));
 		comboBox_Filtro_1.setToolTipText("Seleccionar");
 		comboBox_Filtro_1.setFont(new Font("Arial", Font.BOLD, 15));
 		GridBagConstraints gbc_comboBox_Filtro_1 = new GridBagConstraints();
