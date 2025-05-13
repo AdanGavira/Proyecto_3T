@@ -12,10 +12,12 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.security.Principal;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import java.awt.FlowLayout;
 import javax.swing.BoxLayout;
+
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
 
@@ -56,15 +58,15 @@ public class Ventana_Consultas_Libros extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBounds(0, 11, 884, 62);
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lblNewLabel = new JLabel("Consultas de Libros");
+		JLabel lblNewLabel = new JLabel("CONSULTAS DE LIBROS");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		panel.add(lblNewLabel);
 		lblNewLabel.setBackground(new Color(240, 240, 240));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 40));
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 192));
@@ -73,6 +75,7 @@ public class Ventana_Consultas_Libros extends JFrame {
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
 		JButton btn_AñadirLibro = new JButton("Añadir Libro");
+		btn_AñadirLibro.setForeground(new Color(0, 0, 0));
 		btn_AñadirLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Ventana_Anadir_Libro anadir_libro = new Ventana_Anadir_Libro();
@@ -80,7 +83,7 @@ public class Ventana_Consultas_Libros extends JFrame {
 			}
 		});
 		panel_1.add(btn_AñadirLibro);
-		btn_AñadirLibro.setBackground(new Color(255, 128, 128));
+		btn_AñadirLibro.setBackground(new Color(0, 255, 0));
 		btn_AñadirLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
 		JLabel label = new JLabel("");
@@ -92,8 +95,9 @@ public class Ventana_Consultas_Libros extends JFrame {
 		contentPane.add(panel_2);
 		
 		JButton btn_BuscarLibros = new JButton("Buscar Libros");
+		btn_BuscarLibros.setForeground(new Color(0, 0, 0));
 		panel_2.add(btn_BuscarLibros);
-		btn_BuscarLibros.setBackground(new Color(255, 128, 128));
+		btn_BuscarLibros.setBackground(new Color(255, 128, 64));
 		btn_BuscarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -109,8 +113,9 @@ public class Ventana_Consultas_Libros extends JFrame {
 		contentPane.add(panel_3);
 		
 		JButton btn_EliminarLibro = new JButton("Eliminar Libro");
+		btn_EliminarLibro.setForeground(new Color(255, 255, 255));
 		panel_3.add(btn_EliminarLibro);
-		btn_EliminarLibro.setBackground(new Color(255, 128, 128));
+		btn_EliminarLibro.setBackground(new Color(255, 0, 0));
 		btn_EliminarLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = (String)JOptionPane.showInputDialog(
