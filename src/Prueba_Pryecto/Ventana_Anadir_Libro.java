@@ -7,17 +7,23 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.Image;
+import java.awt.Insets;
 import java.awt.Color;
 
 import javax.swing.JButton;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JMenuItem;
 import java.awt.event.ActionListener;
+import java.security.Principal;
 import java.awt.event.ActionEvent;
 import javax.swing.JComboBox;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
 
 public class Ventana_Anadir_Libro extends JFrame {
 
@@ -55,7 +61,7 @@ public class Ventana_Anadir_Libro extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JLabel lbl_ANADIR_LIBRO = new JLabel("AÑADIR LIBRO");
-		lbl_ANADIR_LIBRO.setFont(new Font("Times New Roman", Font.BOLD, 36));
+		lbl_ANADIR_LIBRO.setFont(new Font("SansSerif", Font.BOLD, 36));
 		lbl_ANADIR_LIBRO.setBounds(276, 11, 276, 50);
 		contentPane.add(lbl_ANADIR_LIBRO);
 		
@@ -81,12 +87,14 @@ public class Ventana_Anadir_Libro extends JFrame {
 		panel.add(lbl_CategoriaFormulario);
 		
 		JTextArea textArea_Nombre = new JTextArea();
+		textArea_Nombre.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_Nombre.setBackground(new Color(192, 192, 192));
-		textArea_Nombre.setForeground(new Color(255, 255, 255));
+		textArea_Nombre.setForeground(new Color(0, 0, 0));
 		textArea_Nombre.setBounds(313, 48, 123, 22);
 		panel.add(textArea_Nombre);
 		
 		JTextArea textArea_Autor = new JTextArea();
+		textArea_Autor.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_Autor.setBackground(new Color(192, 192, 192));
 		textArea_Autor.setBounds(313, 115, 123, 23);
 		panel.add(textArea_Autor);

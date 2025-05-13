@@ -10,11 +10,15 @@ import com.toedter.calendar.JCalendar;
 
 import javax.swing.JLabel;
 import java.awt.Font;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
+import java.security.Principal;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JTable;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import com.toedter.components.JSpinField;
 import com.toedter.calendar.JMonthChooser;
@@ -28,6 +32,7 @@ public class Ventana_Registro_Usuario extends JFrame {
 	private JTextField text_Nombre;
 	private JTextField text_Apellidos;
 	private JTextField text_Correo;
+	private final JLabel lblFondo = new JLabel("");
 
 	/**
 	 * Launch the application.
@@ -68,12 +73,6 @@ public class Ventana_Registro_Usuario extends JFrame {
 		lbl_RegistroUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 30));
 		lbl_RegistroUsuarios.setBounds(36, 11, 310, 57);
 		contentPane.add(lbl_RegistroUsuarios);
-		
-		JLabel lbl_DatosGenerales = new JLabel("Datos Generales");
-		lbl_DatosGenerales.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
-		lbl_DatosGenerales.setBounds(54, 108, 193, 35);
-		contentPane.add(lbl_DatosGenerales);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 128, 128));
@@ -141,6 +140,12 @@ public class Ventana_Registro_Usuario extends JFrame {
 		JYearChooser yearChooser = new JYearChooser();
 		yearChooser.setBounds(335, 176, 78, 20);
 		panel.add(yearChooser);
+		
+		JLabel lbl_DatosGenerales = new JLabel("Datos Generales");
+		lbl_DatosGenerales.setBounds(144, 29, 193, 35);
+		panel.add(lbl_DatosGenerales);
+		lbl_DatosGenerales.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(36, 11, 310, 57);

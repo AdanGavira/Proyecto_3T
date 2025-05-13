@@ -64,10 +64,11 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JLabel lbl_Titulo = new JLabel("Buscar Clientes");
+		JLabel lbl_Titulo = new JLabel("BUSCAR CLIENTES");
+		lbl_Titulo.setBackground(new Color(0, 0, 0));
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lbl_Titulo);
-		lbl_Titulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lbl_Titulo.setFont(new Font("Trebuchet MS", Font.BOLD, 40));
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 192));
