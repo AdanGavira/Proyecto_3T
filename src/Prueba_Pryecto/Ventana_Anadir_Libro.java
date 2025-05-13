@@ -91,9 +91,28 @@ public class Ventana_Anadir_Libro extends JFrame {
 		textArea_Autor.setBounds(313, 115, 123, 23);
 		panel.add(textArea_Autor);
 		
+		JComboBox comboBox = new JComboBox();
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Accion", "Drama", "Infantil", "Terror"}));
+		comboBox.setBounds(313, 187, 123, 22);
+		panel.add(comboBox);
+		
 		// BOTONES
 		
 		JButton btn_AnadirLibro = new JButton("Añadir");
+		btn_AnadirLibro.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				boolean anadido = false;
+				do {
+					try {
+						Libro libro = new Libro();
+						libro.anadirLibro("3442345Y", textArea_Nombre.getText(), textArea_Autor.getText(), (String) comboBox.getSelectedItem(), 5, 11, 2002);
+						anadido = true;
+					} catch (Exception error) {
+						
+					}
+				} while(anadido == false);
+			}
+		});
 		btn_AnadirLibro.setBackground(new Color(0, 255, 0));
 		btn_AnadirLibro.setBounds(120, 296, 89, 23);
 		panel.add(btn_AnadirLibro);
@@ -109,9 +128,6 @@ public class Ventana_Anadir_Libro extends JFrame {
 		btn_EliminarCampos.setBounds(313, 296, 130, 23);
 		panel.add(btn_EliminarCampos);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Accion", "Drama", "Infantil", "Terror"}));
-		comboBox.setBounds(313, 187, 123, 22);
-		panel.add(comboBox);
+		
 	}
 }
