@@ -57,14 +57,16 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
 		panel.setBounds(0, 0, 701, 59);
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lbl_Titulo = new JLabel("Consultas de clientes");
+		JLabel lbl_Titulo = new JLabel("CONSULTAS DE CLIENTES");
+		lbl_Titulo.setForeground(new Color(255, 255, 255));
 		panel.add(lbl_Titulo);
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
-		lbl_Titulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
+		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 192));
