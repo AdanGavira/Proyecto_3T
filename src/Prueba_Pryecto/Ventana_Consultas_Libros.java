@@ -58,8 +58,6 @@ public class Ventana_Consultas_Libros extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel panel = new JPanel();
-		panel.setBackground(new Color(0, 0, 0));
-		panel.setBounds(0, 0, 884, 62);
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -93,7 +91,7 @@ public class Ventana_Consultas_Libros extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(0, 128, 192));
-		panel_2.setBounds(0, 218, 884, 62);
+		panel_2.setBounds(0, 224, 884, 62);
 		contentPane.add(panel_2);
 		
 		JButton btn_BuscarLibros = new JButton("Buscar Libros");
