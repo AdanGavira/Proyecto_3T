@@ -52,6 +52,8 @@ public class Ventana_Anadir_Libro extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		setLocationRelativeTo(null);
+		
 		JLabel lbl_ANADIR_LIBRO = new JLabel("AÑADIR LIBRO");
 		lbl_ANADIR_LIBRO.setFont(new Font("Times New Roman", Font.BOLD, 36));
 		lbl_ANADIR_LIBRO.setBounds(276, 11, 276, 50);
