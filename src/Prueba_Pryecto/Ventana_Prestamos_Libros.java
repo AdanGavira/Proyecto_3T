@@ -109,7 +109,7 @@ public class Ventana_Prestamos_Libros extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(0, 128, 255));
-		panel_2.setBounds(0, 354, 813, 59);
+		panel_2.setBounds(0, 354, 884, 59);
 		getContentPane().add(panel_2);
 		panel_2.setLayout(null);
 		
