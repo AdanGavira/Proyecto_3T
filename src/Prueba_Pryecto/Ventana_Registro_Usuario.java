@@ -9,15 +9,9 @@ import javax.swing.border.EmptyBorder;
 import com.toedter.calendar.JCalendar;
 
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-
 import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.FocusAdapter;
-import java.awt.event.FocusEvent;
 import java.security.Principal;
 import java.awt.BorderLayout;
 import java.awt.Color;
@@ -25,10 +19,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.ImageIcon;
-import javax.swing.InputVerifier;
 import javax.swing.JButton;
-import javax.swing.JComponent;
-
 import com.toedter.components.JSpinField;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
@@ -80,12 +71,12 @@ public class Ventana_Registro_Usuario extends JFrame {
 		lbl_RegistroUsuarios.setBackground(new Color(240, 240, 240));
 		lbl_RegistroUsuarios.setToolTipText("");
 		lbl_RegistroUsuarios.setFont(new Font("Tahoma", Font.PLAIN, 30));
-		lbl_RegistroUsuarios.setBounds(175, 11, 290, 57);
+		lbl_RegistroUsuarios.setBounds(36, 11, 310, 57);
 		contentPane.add(lbl_RegistroUsuarios);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 128, 128));
-		panel.setBounds(97, 79, 449, 332);
+		panel.setBounds(46, 79, 456, 332);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
@@ -112,31 +103,6 @@ public class Ventana_Registro_Usuario extends JFrame {
 		panel.add(text_Correo);
 		text_Correo.setColumns(10);
 		
-		text_Correo.setInputVerifier(new InputVerifier() {
-		    @Override
-		    public boolean verify(JComponent input) {
-		        String text = ((JTextField) input).getText();
-		        if (!text.contains("@")) {
-		            JOptionPane.showMessageDialog(null, "El correo debe contener '@'", "Error", JOptionPane.ERROR_MESSAGE);
-		            return false;
-		        }
-		        return true;
-		    }
-		});
-		
-		text_Correo.addFocusListener(new FocusAdapter() {
-		    @Override
-		    public void focusLost(FocusEvent e) {
-		        String text = text_Correo.getText();
-		        if (!text.contains("@")) {
-		            JOptionPane.showMessageDialog(null, "El correo debe contener '@'", "Error", JOptionPane.ERROR_MESSAGE);
-		            text_Correo.requestFocus(); // Devuelve el foco si no es válido
-		        }
-		    }
-		});
-
-
-		
 		text_Apellidos = new JTextField();
 		text_Apellidos.setBounds(175, 138, 141, 20);
 		panel.add(text_Apellidos);
@@ -157,20 +123,8 @@ public class Ventana_Registro_Usuario extends JFrame {
 		btn_Enviar.setForeground(new Color(0, 128, 0));
 		btn_Enviar.setBackground(new Color(0, 255, 0));
 		btn_Enviar.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		btn_Enviar.setBounds(91, 298, 89, 23);
+		btn_Enviar.setBounds(190, 298, 89, 23);
 		panel.add(btn_Enviar);
-		
-		JButton btn_EliminarCampos = new JButton("Eliminar campos");
-		btn_EliminarCampos.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				text_Nombre.setText(null);
-				text_Apellidos.setText(null);
-				text_Correo.setText(null);
-			}
-		});
-		btn_EliminarCampos.setBackground(new Color(255, 0, 0));
-		btn_EliminarCampos.setBounds(251, 298, 130, 23);
-		panel.add(btn_EliminarCampos);
 		
 		JSpinField spinField = new JSpinField();
 		spinField.setMinimum(1);
@@ -188,13 +142,13 @@ public class Ventana_Registro_Usuario extends JFrame {
 		panel.add(yearChooser);
 		
 		JLabel lbl_DatosGenerales = new JLabel("Datos Generales");
-		lbl_DatosGenerales.setBounds(136, 24, 193, 35);
+		lbl_DatosGenerales.setBounds(144, 29, 193, 35);
 		panel.add(lbl_DatosGenerales);
 		lbl_DatosGenerales.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(175, 11, 290, 57);
+		panel_1.setBounds(36, 11, 310, 57);
 		contentPane.add(panel_1);
 	}
 }

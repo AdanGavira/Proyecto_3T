@@ -48,7 +48,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 717, 480);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(0, 128, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -69,7 +69,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
+		panel_1.setBackground(new Color(0, 128, 192));
 		panel_1.setBounds(0, 84, 701, 312);
 		contentPane.add(panel_1);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();

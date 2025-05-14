@@ -76,67 +76,67 @@ public class Ventana_Anadir_Libro extends JFrame {
 		
 		JLabel lbl_NombreFormulario = new JLabel("Nombre");
 		lbl_NombreFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lbl_NombreFormulario.setBounds(133, 32, 76, 23);
+		lbl_NombreFormulario.setBounds(133, 11, 76, 23);
 		panel.add(lbl_NombreFormulario);
 		
 		JLabel lbl_AutorFormulario = new JLabel("Autor");
 		lbl_AutorFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lbl_AutorFormulario.setBounds(141, 80, 55, 14);
+		lbl_AutorFormulario.setBounds(141, 63, 55, 14);
 		panel.add(lbl_AutorFormulario);
 		
 		JLabel lbl_CategoriaFormulario = new JLabel("Categoría");
 		lbl_CategoriaFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lbl_CategoriaFormulario.setBounds(120, 229, 89, 23);
+		lbl_CategoriaFormulario.setBounds(120, 211, 89, 23);
 		panel.add(lbl_CategoriaFormulario);
 		
 		JTextArea textArea_Nombre = new JTextArea();
 		textArea_Nombre.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_Nombre.setBackground(new Color(192, 192, 192));
 		textArea_Nombre.setForeground(new Color(0, 0, 0));
-		textArea_Nombre.setBounds(313, 31, 123, 22);
+		textArea_Nombre.setBounds(313, 12, 123, 22);
 		panel.add(textArea_Nombre);
 		
 		JTextArea textArea_Autor = new JTextArea();
 		textArea_Autor.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_Autor.setBackground(new Color(192, 192, 192));
-		textArea_Autor.setBounds(313, 75, 123, 23);
+		textArea_Autor.setBounds(313, 60, 123, 23);
 		panel.add(textArea_Autor);
 		
 		JComboBox comboBox = new JComboBox();
 		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Accion", "Drama", "Infantil", "Terror"}));
-		comboBox.setBounds(313, 229, 123, 22);
+		comboBox.setBounds(313, 213, 123, 22);
 		panel.add(comboBox);
 		
 
 		JSpinField spinField = new JSpinField();
 		spinField.setMinimum(1);
 		spinField.setMaximum(31);
-		spinField.setBounds(273, 184, 44, 20);
+		spinField.setBounds(243, 156, 44, 20);
 		panel.add(spinField);
 		
 		JMonthChooser monthChooser = new JMonthChooser();
 		monthChooser.setMonth(0);
-		monthChooser.setBounds(327, 184, 96, 20);
+		monthChooser.setBounds(297, 156, 96, 20);
 		panel.add(monthChooser);
 		
 		JYearChooser yearChooser = new JYearChooser();
-		yearChooser.setBounds(433, 184, 78, 20);
+		yearChooser.setBounds(403, 156, 78, 20);
 		panel.add(yearChooser);
 		
 		JLabel lbl_ISBNFormulario = new JLabel("ISBN");
 		lbl_ISBNFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lbl_ISBNFormulario.setBounds(141, 131, 55, 14);
+		lbl_ISBNFormulario.setBounds(141, 113, 55, 14);
 		panel.add(lbl_ISBNFormulario);
 		
 		JTextArea textArea_ISBN = new JTextArea();
 		textArea_ISBN.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_ISBN.setBackground(Color.LIGHT_GRAY);
-		textArea_ISBN.setBounds(313, 126, 123, 23);
+		textArea_ISBN.setBounds(313, 110, 123, 23);
 		panel.add(textArea_ISBN);
 		
 		JLabel lbl_FechaFormulario = new JLabel("Fecha de publicación");
 		lbl_FechaFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-		lbl_FechaFormulario.setBounds(78, 184, 185, 23);
+		lbl_FechaFormulario.setBounds(48, 162, 185, 14);
 		panel.add(lbl_FechaFormulario);
 		
 		// BOTONES
