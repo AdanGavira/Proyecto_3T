@@ -76,7 +76,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		panel_1.setLayout(null);
 		
 		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(255, 128, 128));
+		panel_2.setBackground(new Color(0, 128, 192));
 		panel_2.setBounds(181, 29, 323, 66);
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
@@ -92,10 +92,10 @@ public class Ventana_Consultas_Clientes extends JFrame {
 			}
 		});
 		btn_BuscarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_BuscarCliente.setBackground(new Color(255, 255, 255));
+		btn_BuscarCliente.setBackground(new Color(0, 255, 0));
 		
 		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(255, 128, 128));
+		panel_3.setBackground(new Color(0, 128, 192));
 		panel_3.setBounds(181, 125, 323, 57);
 		panel_1.add(panel_3);
 		
@@ -103,15 +103,15 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		btn_EliminarCliente_1.setForeground(new Color(0, 0, 0));
 		panel_3.add(btn_EliminarCliente_1);
 		btn_EliminarCliente_1.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_EliminarCliente_1.setBackground(new Color(255, 255, 255));
+		btn_EliminarCliente_1.setBackground(new Color(255, 128, 64));
 		
 		JPanel panel_3_1 = new JPanel();
-		panel_3_1.setBackground(new Color(255, 128, 128));
+		panel_3_1.setBackground(new Color(0, 128, 192));
 		panel_3_1.setBounds(181, 225, 323, 57);
 		panel_1.add(panel_3_1);
 		
 		JButton btn_EliminarCliente = new JButton("Eliminar un cliente");
-		btn_EliminarCliente.setForeground(new Color(0, 0, 0));
+		btn_EliminarCliente.setForeground(new Color(255, 255, 255));
 		panel_3_1.add(btn_EliminarCliente);
 		btn_EliminarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -128,6 +128,6 @@ public class Ventana_Consultas_Clientes extends JFrame {
 			}
 		});
 		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_EliminarCliente.setBackground(new Color(255, 255, 255));
+		btn_EliminarCliente.setBackground(new Color(255, 0, 0));
 	}
 }
