@@ -113,6 +113,13 @@ public class Ventana_Principal extends JFrame {
 		
 		//Botón Préstamo de libros
 		JButton btn_Prestamos_Libros = new JButton("Préstamo de libros");
+		btn_Prestamos_Libros.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) 
+			{
+				Ventana_Prestamos_Libros P2 = new Ventana_Prestamos_Libros();
+				P2.setVisible(true);
+			}
+		});
 		btn_Prestamos_Libros.setBounds(5, 292, 547, 284);
 		btn_Prestamos_Libros.setBorderPainted(false);
 		btn_Prestamos_Libros.setContentAreaFilled(false);
@@ -120,13 +127,7 @@ public class Ventana_Principal extends JFrame {
 		Image imagen2 = icono2.getImage().getScaledInstance(btn_Prestamos_Libros.getWidth(), btn_Prestamos_Libros.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del botón
 		ImageIcon iconoAjustado2 = new ImageIcon (imagen2);
 		btn_Prestamos_Libros.setIcon(iconoAjustado2);
-		btn_Prestamos_Libros.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				Ventana_Prestamos_Libros P1 = new Ventana_Prestamos_Libros();
-				P1.setVisible(true);
-			}
-		});
+	
 		contentPane.add(btn_Prestamos_Libros);
 		
 		//Botón consulta clientes
@@ -138,13 +139,13 @@ public class Ventana_Principal extends JFrame {
 		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Clientes.getWidth(), btn_Consultas_Clientes.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del boton
 		ImageIcon iconoAjustado6 = new ImageIcon (imagen6);
 		btn_Consultas_Clientes.setIcon(iconoAjustado6);
-		btn_Consultas_Clientes.addActionListener(new ActionListener() {
+		/*btn_Consultas_Clientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
 				Ventana_Consultas_Clientes C6 = new Ventana_Consultas_Clientes();
 				C6.setVisible(true);
 			}
-		});
+		});*/
 		contentPane.add(btn_Consultas_Clientes);
 	}
 }
