@@ -69,6 +69,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JLabel lbl_Titulo = new JLabel("BUSCAR LIBROS");
+		lbl_Titulo.setBackground(new Color(0, 0, 0));
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lbl_Titulo);
 		lbl_Titulo.setFont(new Font("Trebuchet MS", Font.BOLD, 40));
