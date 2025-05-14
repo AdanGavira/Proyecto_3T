@@ -139,13 +139,13 @@ public class Ventana_Principal extends JFrame {
 		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Clientes.getWidth(), btn_Consultas_Clientes.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del boton
 		ImageIcon iconoAjustado6 = new ImageIcon (imagen6);
 		btn_Consultas_Clientes.setIcon(iconoAjustado6);
-		/*btn_Consultas_Clientes.addActionListener(new ActionListener() {
+		btn_Consultas_Clientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
 				Ventana_Consultas_Clientes C6 = new Ventana_Consultas_Clientes();
 				C6.setVisible(true);
 			}
-		});*/
+		});
 		contentPane.add(btn_Consultas_Clientes);
 	}
 }

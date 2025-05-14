@@ -82,7 +82,8 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		panel_2.setLayout(null);
 		
 		JButton btn_BuscarCliente = new JButton("Buscar un cliente");
-		btn_BuscarCliente.setBounds(10, 11, 291, 45);
+		btn_BuscarCliente.setForeground(new Color(0, 0, 0));
+		btn_BuscarCliente.setBounds(10, 11, 303, 45);
 		panel_2.add(btn_BuscarCliente);
 		btn_BuscarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -91,7 +92,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 			}
 		});
 		btn_BuscarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_BuscarCliente.setBackground(new Color(255, 128, 128));
+		btn_BuscarCliente.setBackground(new Color(255, 255, 255));
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(255, 128, 128));
@@ -99,9 +100,10 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		panel_1.add(panel_3);
 		
 		JButton btn_EliminarCliente_1 = new JButton("Préstamos");
+		btn_EliminarCliente_1.setForeground(new Color(0, 0, 0));
 		panel_3.add(btn_EliminarCliente_1);
 		btn_EliminarCliente_1.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_EliminarCliente_1.setBackground(new Color(255, 128, 128));
+		btn_EliminarCliente_1.setBackground(new Color(255, 255, 255));
 		
 		JPanel panel_3_1 = new JPanel();
 		panel_3_1.setBackground(new Color(255, 128, 128));
@@ -109,6 +111,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		panel_1.add(panel_3_1);
 		
 		JButton btn_EliminarCliente = new JButton("Eliminar un cliente");
+		btn_EliminarCliente.setForeground(new Color(0, 0, 0));
 		panel_3_1.add(btn_EliminarCliente);
 		btn_EliminarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -125,6 +128,6 @@ public class Ventana_Consultas_Clientes extends JFrame {
 			}
 		});
 		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_EliminarCliente.setBackground(new Color(255, 128, 128));
+		btn_EliminarCliente.setBackground(new Color(255, 255, 255));
 	}
 }
