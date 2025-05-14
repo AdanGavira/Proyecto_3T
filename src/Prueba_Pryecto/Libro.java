@@ -83,7 +83,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 			conexion.ejecutarInsertDeleteUpdate("DELETE FROM libro WHERE ISBN = '"+ISBN+"';");
 			conexion.desconectar();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL ELIMINAR LIBRO");
 			e.printStackTrace();
 		}
 	}
@@ -100,28 +100,65 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL BUSCAR");
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public boolean isPrestado() {
+		boolean isPrestado = false;
+		try {
+			conexion.conectar();
+			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente IS NOT NULL");
+			while(resultado.next()) {
+				int tem_cliente = resultado.getInt("id_cliente");
+				if (tem_cliente != 0) {
+					isPrestado = true;
+				}
+			}
+			
+			
+		} catch (SQLException e) {
+			System.out.println("ERROR AL BUSCAR");
+			e.printStackTrace();
+		}
+		return isPrestado;
 	}
 	
 	public void prestarLibro(int ID_Cliente, String ISBN) {
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = '"+ID_Cliente+"' WHERE ISBN = '"+ISBN+"'");
+		} catch (Exception e) {
+			System.out.println("ERROR EN EL PRÉSTAMO");
+			e.printStackTrace();
+		}
+	}
+	
+	public boolean existeLibro(String ISBN) {
+		try {
+			conexion.conectar();
+			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"'");
+			while(resultado.next()) {
+				String tem_ISBN = resultado.getString("ISBN");
+				if (!tem_ISBN.isEmpty()) {
+					return true;
+				} else return false;
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return false;
 	}
 	
 	public void devolverLibro(String ISBN) {
 		try {
 			conexion.conectar();
-			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = '"+null+"' WHERE `libro`.`ISBN` = '"+ISBN+"'");
+			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = NULL WHERE `libro`.`ISBN` = '"+ISBN+"'");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL DEVOLVER LIBRO");
 			e.printStackTrace();
 		}
 	}

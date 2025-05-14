@@ -118,18 +118,39 @@ public class Ventana_Consultas_Libros extends JFrame {
 		btn_EliminarLibro.setBackground(new Color(255, 0, 0));
 		btn_EliminarLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				String id = (String)JOptionPane.showInputDialog(
+				Libro libro = new Libro();
+				String ISBN = (String)JOptionPane.showInputDialog(
 									btn_EliminarLibro,
-				                    "Introduce el ID del libro que quieres eliminar",
+				                    "Introduce el ISBN del libro que quieres eliminar",
 				                    "Borrar libro",
 				                    JOptionPane.PLAIN_MESSAGE,
 				                    null,
 				                    null, 
 				                    isAlwaysOnTop()
 				                    );
-				//Añadir consulta de eliminación
+				if (libro.existeLibro(ISBN)) {
+					libro.eliminarLibro(ISBN);
+				} else {
+					JOptionPane.showMessageDialog(btn_EliminarLibro,
+						    "Este libro no existe",
+						    "Error en el ISBN",
+						    JOptionPane.ERROR_MESSAGE);
+				}
+				
 			}
 		});
 		btn_EliminarLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(255, 255, 255));
+		panel_4.setBounds(0, 0, 884, 59);
+		contentPane.add(panel_4);
+		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lbl_Titulo = new JLabel("CONSULTAS DE LIBROS");
+		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
+		lbl_Titulo.setForeground(new Color(0, 0, 0));
+		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
+		panel_4.add(lbl_Titulo);
 	}
 }
