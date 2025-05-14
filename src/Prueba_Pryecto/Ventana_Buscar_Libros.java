@@ -17,6 +17,8 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JMenu;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.awt.event.ActionEvent;
 import java.awt.Color;
 import javax.swing.DefaultComboBoxModel;
@@ -95,7 +97,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 		panel_1.add(lbl_Filtro_1, gbc_lbl_Filtro_1);
 		
 		JComboBox comboBox_Filtro_1 = new JComboBox();
-		comboBox_Filtro_1.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "Autor", "Categoría", "ID", "Prestados", "Todo"}));
+		comboBox_Filtro_1.setModel(new DefaultComboBoxModel(new String[] {"Titulo", "Autor", "Categoria", "ISBN", "Prestados", "Todo"}));
 		comboBox_Filtro_1.setToolTipText("Seleccionar");
 		comboBox_Filtro_1.setFont(new Font("Arial", Font.BOLD, 15));
 		GridBagConstraints gbc_comboBox_Filtro_1 = new GridBagConstraints();
@@ -128,7 +130,26 @@ public class Ventana_Buscar_Libros extends JFrame {
 		JButton btn_Buscar_1 = new JButton("Buscar");
 		btn_Buscar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Libro libro = new Libro();
 				textArea.setVisible(true);
+				textArea.setText(null);
+				try {
+					ResultSet resultado = libro.buscarLibro((String)comboBox_Filtro_1.getSelectedItem(), textField_Valor.getText());
+					while(resultado.next()) {
+						String tem_Titulo = resultado.getString("Titulo");
+						String tem_Autor = resultado.getString("Autor");
+						String tem_ISBN = resultado.getString("ISBN");
+						String tem_Fecha = resultado.getString("Fecha_de_Publicacion");
+						String tem_Categoria = resultado.getString("Categoria");
+						int tem_cliente = resultado.getInt("id_cliente");
+						
+						textArea.setText(textArea.getText()+"Titulo: "+tem_Titulo+" Autor: "+tem_Autor+" ISBN: "+tem_ISBN+" Fecha de publicación: "+tem_Fecha+" Categoría: "+tem_Categoria+" ID_Cliente: "+tem_cliente+"\n");
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				
 				textField_Valor.setText(null);	
 			}
 		});

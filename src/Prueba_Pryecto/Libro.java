@@ -1,5 +1,6 @@
 package Prueba_Pryecto;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class Libro {
@@ -87,19 +88,22 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		}
 	}
 	
-	public void buscarLibro (String filtro, String valor) {
+	public ResultSet buscarLibro (String filtro, String valor) {
 		try {
 			conexion.conectar();
 			if (filtro.equals("Todo")) {
-				conexion.ejecutarSelect("SELECT * FROM libro");
+				return conexion.ejecutarSelect("SELECT * FROM libro");
+			} else if (filtro.equals("Prestados")) {
+				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente != NULL;");
 			} else {
-				conexion.ejecutarSelect("SELECT * FROM libro WHERE '"+filtro+"' = '"+valor+"';");
+				return conexion.ejecutarSelect("SELECT * FROM libro WHERE "+filtro+" = '"+valor+"';");
 			}
 			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return null;
 	}
 	
 	public void prestarLibro(int ID_Cliente, String ISBN) {
