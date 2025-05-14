@@ -113,60 +113,6 @@ public class Ventana_Registro_Usuario extends JFrame {
 		panel.add(text_Nombre);
 		text_Nombre.setColumns(10);
 		
-		JLabel lbl_Nombre = new JLabel("Nombre: ");
-		lbl_Nombre.setBounds(157, 78, 74, 26);
-		panel.add(lbl_Nombre);
-		lbl_Nombre.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Nombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
-		
-		JButton btn_Enviar = new JButton("Enviar");
-		btn_Enviar.setForeground(new Color(0, 0, 0));
-		btn_Enviar.setBackground(new Color(0, 255, 0));
-		btn_Enviar.setFont(new Font("Segoe UI Variable", Font.PLAIN, 15));
-		btn_Enviar.setBounds(180, 345, 89, 23);
-		panel.add(btn_Enviar);
-		
-		// EL CORREO ELECTRÓNICO DEBE CONTENER "@"
-		
-		btn_Enviar.addActionListener(new ActionListener() {
-		    @Override
-		    public void actionPerformed(ActionEvent e) {
-		        String text = text_Correo.getText();
-		        if (!text.contains("@")) {
-		            JOptionPane.showMessageDialog(null, "El correo debe contener '@'", "Error", JOptionPane.ERROR_MESSAGE);
-		        } else {
-		            // PROCEDER CON EL ENVÍO DEL FORMULARIO
-		            System.out.println("Correo válido: " + text);
-		        }
-		    }
-		});
-		
-		// MOSTRAR UN MENSAJE AL PASAR EL RATÓN POR CADA TEXTAREA
-		
-		text_Nombre.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseEntered(MouseEvent e) {
-		        text_Nombre.setToolTipText("Puede ingresar su nombre de pila o un apodo");
-		    }
-		});
-		
-		text_Apellidos.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseEntered(MouseEvent e) {
-		        text_Apellidos.setToolTipText("Introduzca primero el primer apellido y luego el segundo apellido");
-		    }
-		});
-		
-		text_Correo.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseEntered(MouseEvent e) {
-		        text_Correo.setToolTipText("Introduzca su correo electrónico para recibir todas las notificaciones");
-		    }
-		});
-
-
-
-		
 		JButton btn_EliminarCampos = new JButton("Eliminar campos");
 		btn_EliminarCampos.setFont(new Font("Segoe UI Variable", Font.PLAIN, 11));
 		btn_EliminarCampos.setForeground(new Color(255, 255, 255));
@@ -214,5 +160,77 @@ public class Ventana_Registro_Usuario extends JFrame {
 		lbl_RegistroUsuarios.setBackground(new Color(240, 240, 240));
 		lbl_RegistroUsuarios.setToolTipText("");
 		lbl_RegistroUsuarios.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		JLabel lbl_Nombre = new JLabel("Nombre: ");
+		lbl_Nombre.setBounds(157, 78, 74, 26);
+		panel.add(lbl_Nombre);
+		lbl_Nombre.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_Nombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
+		
+		JButton btn_Enviar = new JButton("Enviar");
+		btn_Enviar.setForeground(new Color(0, 0, 0));
+		btn_Enviar.setBackground(new Color(0, 255, 0));
+		btn_Enviar.setFont(new Font("Segoe UI Variable", Font.PLAIN, 15));
+		btn_Enviar.setBounds(180, 345, 89, 23);
+		panel.add(btn_Enviar);
+		
+		
+		btn_Enviar.addActionListener(new ActionListener() {
+		    @Override
+		    public void actionPerformed(ActionEvent e) {
+		    	Usuario cliente = new Usuario();
+		    	
+		        if (!text_Correo.getText().contains("@")) { // Comprueba que el correo contiene @ por lo que no puede estar vacío
+		            JOptionPane.showMessageDialog(null, "El correo debe contener '@'", "Error", JOptionPane.ERROR_MESSAGE);
+		        } else {
+		        	if (!text_Nombre.getText().isEmpty() || !text_Apellidos.getText().isEmpty()){ //Comprueba que nombre y apellido no están vacíos para introducir datos
+			            if (yearChooser.getValue() > 2025) { //Comprueba que el año de nacimiento no sea más de 2025
+			            	JOptionPane.showMessageDialog(btn_Enviar,
+								    "La fecha de nacimiento es inválida",
+								    "Error en la fecha de nacimiento",
+								    JOptionPane.ERROR_MESSAGE);
+			            } else {
+			            	//Añadir usuario a través de los datos del formulario
+			            	cliente.anadirUsuario(text_Nombre.getText(), text_Apellidos.getText(), spinField.getValue(), monthChooser.getMonth()+1, yearChooser.getValue(), text_Correo.getText());
+			            }
+		        	} else {
+		        		JOptionPane.showMessageDialog(btn_Enviar,
+							    "Los campos de nombre y apellido deben tener datos",
+							    "Error en el nombre y apellidos",
+							    JOptionPane.ERROR_MESSAGE);
+		        	}
+		            
+		            
+		        }
+		    }
+		});
+		
+		// MOSTRAR UN MENSAJE AL PASAR EL RATÓN POR CADA TEXTAREA
+		
+		text_Nombre.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseEntered(MouseEvent e) {
+		        text_Nombre.setToolTipText("Puede ingresar su nombre de pila o un apodo");
+		    }
+		});
+		
+		text_Apellidos.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseEntered(MouseEvent e) {
+		        text_Apellidos.setToolTipText("Introduzca primero el primer apellido y luego el segundo apellido");
+		    }
+		});
+		
+		text_Correo.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseEntered(MouseEvent e) {
+		        text_Correo.setToolTipText("Introduzca su correo electrónico para recibir todas las notificaciones");
+		    }
+		});
+
+
+
+		
+		
 	}
 }

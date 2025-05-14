@@ -5,6 +5,8 @@ import java.awt.EventQueue;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
@@ -132,7 +134,29 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		btn_Buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setVisible(true);
+				Usuario cliente = new Usuario();
+				textArea.setVisible(true);
+				textArea.setText(null);
+				try {
+					
+					ResultSet resultado = cliente.buscarUsuario((String)comboBox_Filtro.getSelectedItem(), textField_Valor.getText()); //Guarda los datos de la consulta para imprimirlos
+					while(resultado.next()) {
+						String tem_ID = resultado.getString("ID");
+						String tem_Nombre = resultado.getString("Nombre");
+						String tem_Apellidos = resultado.getString("Apellidos");
+						String tem_Fecha = resultado.getString("Fecha_de_nacimiento");
+						String tem_Email = resultado.getString("Email");
+						
+						//
+						//Imprime el resultado de la consulta en el textArea
+						textArea.setText(textArea.getText()+"ID de cliente: "+tem_ID+" Nombre: "+tem_Nombre+" Apellidos: "+tem_Apellidos+" Fecha de nacimiento: "+tem_Fecha+" Correo Electrónico: "+tem_Email+"\n");
+					}
+				} catch (SQLException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				textField_Valor.setText(null);
+				
 			}
 		});
 		btn_Buscar.setForeground(new Color(255, 255, 255));
