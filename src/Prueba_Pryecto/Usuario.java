@@ -94,7 +94,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 			conexion.desconectar();
 			
 		} catch (SQLException e) {
-			System.out.println("ERROR AL INSERTAR LIBRO");
+			System.out.println("ERROR AL AÑADIR CLIENTE");
 			e.printStackTrace();
 		}
 		
@@ -106,7 +106,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 			conexion.ejecutarInsertDeleteUpdate("DELETE FROM cliente WHERE ID = '"+ID+"';");
 			conexion.desconectar();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL ELIMINAR CLIENTE");
 			e.printStackTrace();
 		}
 	}
@@ -122,7 +122,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 			}
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL BUSCAR USUARIO");
 			e.printStackTrace();
 		}
 		return null;
@@ -139,19 +139,19 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 				} else return false;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL BUSCAR CLIENTE");
 			e.printStackTrace();
 		}
 		return false;
 	}
 	
-	public ResultSet buscarLibrosPrestados (int ID) {
+	public ResultSet buscarLibrosPrestados (String ID) {
 		try {
 			conexion.conectar();
-			conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente = "+ID);
+			return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente = '"+ID+"'");
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL BUSCAR LIBROS");
 			e.printStackTrace();
 		}
 		return null;

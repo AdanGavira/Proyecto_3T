@@ -88,6 +88,11 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		contentPane.add(panel_1_2);
 		
 		JButton btn_Prestamos = new JButton("Prestámos");
+		btn_Prestamos.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+			}
+		});
 		btn_Prestamos.setFont(new Font("Tahoma", Font.BOLD, 30));
 		panel_1_2.add(btn_Prestamos);
 		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
