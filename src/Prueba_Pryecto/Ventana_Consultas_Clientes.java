@@ -48,7 +48,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 717, 480);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(0, 128, 192));
+		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
@@ -58,7 +58,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(0, 0, 0));
-		panel.setBounds(0, 0, 701, 59);
+		panel.setBounds(102, 0, 458, 50);
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -66,10 +66,10 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		lbl_Titulo.setForeground(new Color(255, 255, 255));
 		panel.add(lbl_Titulo);
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
-		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
+		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 33));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(0, 128, 192));
+		panel_1.setBackground(new Color(255, 255, 255));
 		panel_1.setBounds(0, 84, 701, 312);
 		contentPane.add(panel_1);
 		GridBagLayout gbl_panel_1 = new GridBagLayout();
