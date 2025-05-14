@@ -119,6 +119,39 @@ public class Ventana_Registro_Usuario extends JFrame {
 		lbl_Nombre.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_Nombre.setFont(new Font("Tahoma", Font.PLAIN, 15));
 		
+		JSpinField spinField = new JSpinField();
+		spinField.setMinimum(1);
+		spinField.setMaximum(31);
+		spinField.setBounds(252, 190, 44, 20);
+		panel.add(spinField);
+		
+		JMonthChooser monthChooser = new JMonthChooser();
+		monthChooser.setMonth(0);
+		monthChooser.setBounds(306, 190, 96, 20);
+		panel.add(monthChooser);
+		
+		JYearChooser yearChooser = new JYearChooser();
+		yearChooser.setBounds(412, 190, 78, 20);
+		panel.add(yearChooser);
+		
+		JLabel lbl_DatosGenerales = new JLabel("DATOS GENERALES");
+		lbl_DatosGenerales.setBounds(193, 11, 229, 35);
+		panel.add(lbl_DatosGenerales);
+		lbl_DatosGenerales.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBounds(202, 25, 438, 47);
+		contentPane.add(panel_1);
+		
+		JLabel lbl_RegistroUsuarios = new JLabel("REGISTRO DE USUARIOS");
+		panel_1.add(lbl_RegistroUsuarios);
+		lbl_RegistroUsuarios.setForeground(new Color(0, 0, 0));
+		lbl_RegistroUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_RegistroUsuarios.setBackground(new Color(240, 240, 240));
+		lbl_RegistroUsuarios.setToolTipText("");
+		lbl_RegistroUsuarios.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
 		JButton btn_Enviar = new JButton("Enviar");
 		btn_Enviar.setForeground(new Color(0, 0, 0));
 		btn_Enviar.setBackground(new Color(0, 255, 0));
@@ -131,12 +164,28 @@ public class Ventana_Registro_Usuario extends JFrame {
 		btn_Enviar.addActionListener(new ActionListener() {
 		    @Override
 		    public void actionPerformed(ActionEvent e) {
-		        String text = text_Correo.getText();
-		        if (!text.contains("@")) {
-		            JOptionPane.showMessageDialog(null, "El correo debe contener '@'", "Error", JOptionPane.ERROR_MESSAGE);
-		        } else {
-		            // PROCEDER CON EL ENVÍO DEL FORMULARIO
-		            System.out.println("Correo válido: " + text);
+		    	Usuario cliente = new Usuario();
+		    	
+		        if (!text_Correo.getText().contains("@")) { //Comprueba que el correo contiene @ por lo que no puede estar vacío
+		        	JOptionPane.showMessageDialog(null, "El correo debe contener '@'", "Error", JOptionPane.ERROR_MESSAGE);
+		        	
+		        } else { 
+		        	if (!text_Nombre.getText().isEmpty() || !text_Apellidos.getText().isEmpty()){ //Comprueba que nombre y apellido no están vacíos para introducir datos
+			            if (yearChooser.getValue() > 2025) { //Comprueba que el año de nacimiento no sea más de 2025
+			            	JOptionPane.showMessageDialog(btn_Enviar,
+								    "La fecha de nacimiento es inválida",
+								    "Error en la fecha de nacimiento",
+								    JOptionPane.ERROR_MESSAGE);
+			            } else {
+			            	//Añadir usuario a través de los datos del formulario
+			            	cliente.anadirUsuario(text_Nombre.getText(), text_Apellidos.getText(), spinField.getValue(), monthChooser.getMonth()+1, yearChooser.getValue(), text_Correo.getText());
+			            }
+		        	} else {
+		        		JOptionPane.showMessageDialog(btn_Enviar,
+							    "Los campos de nombre y apellido deben tener datos",
+							    "Error en el nombre y apellidos",
+							    JOptionPane.ERROR_MESSAGE);
+		        	}
 		        }
 		    }
 		});
@@ -182,37 +231,6 @@ public class Ventana_Registro_Usuario extends JFrame {
 		btn_EliminarCampos.setBounds(338, 347, 130, 23);
 		panel.add(btn_EliminarCampos);
 		
-		JSpinField spinField = new JSpinField();
-		spinField.setMinimum(1);
-		spinField.setMaximum(31);
-		spinField.setBounds(252, 190, 44, 20);
-		panel.add(spinField);
 		
-		JMonthChooser monthChooser = new JMonthChooser();
-		monthChooser.setMonth(0);
-		monthChooser.setBounds(306, 190, 96, 20);
-		panel.add(monthChooser);
-		
-		JYearChooser yearChooser = new JYearChooser();
-		yearChooser.setBounds(412, 190, 78, 20);
-		panel.add(yearChooser);
-		
-		JLabel lbl_DatosGenerales = new JLabel("DATOS GENERALES");
-		lbl_DatosGenerales.setBounds(193, 11, 229, 35);
-		panel.add(lbl_DatosGenerales);
-		lbl_DatosGenerales.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
-		
-		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(202, 25, 438, 47);
-		contentPane.add(panel_1);
-		
-		JLabel lbl_RegistroUsuarios = new JLabel("REGISTRO DE USUARIOS");
-		panel_1.add(lbl_RegistroUsuarios);
-		lbl_RegistroUsuarios.setForeground(new Color(0, 0, 0));
-		lbl_RegistroUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_RegistroUsuarios.setBackground(new Color(240, 240, 240));
-		lbl_RegistroUsuarios.setToolTipText("");
-		lbl_RegistroUsuarios.setFont(new Font("Tahoma", Font.BOLD, 30));
 	}
 }
