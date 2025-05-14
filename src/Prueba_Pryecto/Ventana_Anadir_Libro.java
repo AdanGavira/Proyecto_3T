@@ -148,6 +148,7 @@ public class Ventana_Anadir_Libro extends JFrame {
 				do {
 					try {
 						Libro libro = new Libro();
+						//Añadir nuevo libro apartir de los datos del formulario
 						libro.anadirLibro(textArea_ISBN.getText(), textArea_Nombre.getText(), textArea_Autor.getText(), (String) comboBox.getSelectedItem(), spinField.getValue(), monthChooser.getMonth()+1, yearChooser.getValue());
 						anadido = true;
 					} catch (Exception error) {
