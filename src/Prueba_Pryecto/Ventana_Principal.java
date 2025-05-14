@@ -125,44 +125,23 @@ public class Ventana_Principal extends JFrame {
 			}
 		});
 		contentPane.add(btn_Prestamos_Libros);
-	
 		
-		JButton btn_Consultas_Usuario = new JButton("Registro de Clientes");
-		btn_Consultas_Usuario.setBorderPainted(false);
-		btn_Consultas_Usuario.setContentAreaFilled(false);
-		btn_Consultas_Usuario.setBounds(5, 292, 547, 284);
-		ImageIcon icono5 = new ImageIcon(Ventana_Principal.class.getResource("/image/registro_clientes_escala"));
-		Image imagen5 = icono2.getImage().getScaledInstance(btn_Consultas_Usuario.getWidth(), btn_Consultas_Usuario.getHeight(), Image.SCALE_SMOOTH);
-		ImageIcon iconoAjustado5 = new ImageIcon (imagen3);
-		btn_Consultas_Usuario.setIcon(iconoAjustado3);
-		btn_Consultas_Usuario.addActionListener(new ActionListener() {
+		
+		JButton btn_Consultas_Clientes = new JButton("Consulta Clientes");
+		btn_Consultas_Clientes.setBounds(559, 587, 547, 284);
+		btn_Consultas_Clientes.setBorderPainted(false);
+		btn_Consultas_Clientes.setContentAreaFilled(false);
+		ImageIcon icono6 = new ImageIcon(Ventana_Principal.class.getResource("/image/consulta_clientes_escala.png"));
+		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Clientes.getWidth(), btn_Consultas_Clientes.getHeight(), Image.SCALE_SMOOTH);
+		ImageIcon iconoAjustado6 = new ImageIcon (imagen6);
+		btn_Consultas_Clientes.setIcon(iconoAjustado6);
+		btn_Consultas_Clientes.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
 				Ventana_Consultas_Clientes C6 = new Ventana_Consultas_Clientes();
 				C6.setVisible(true);
 			}
 		});
-		contentPane.add(btn_Prestamos_Libros);
-		
-		
-		JButton btn_Consultas_Clientes = new JButton(" Consultas Clientes");
-		btn_Consultas_Clientes.setBorderPainted(false);
-		btn_Consultas_Clientes.setContentAreaFilled(false);
-		btn_Consultas_Clientes.setBounds(5, 292, 547, 284);
-		ImageIcon icono6 = new ImageIcon(Ventana_Principal.class.getResource("/image/registro_clientes_escala"));
-		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Clientes.getWidth(), btn_Consultas_Clientes.getHeight(), Image.SCALE_SMOOTH);
-		ImageIcon iconoAjustado6 = new ImageIcon (imagen6);
-		btn_Consultas_Usuario.setIcon(iconoAjustado6);
 		contentPane.add(btn_Consultas_Clientes);
-		
-		JButton btnNewButton = new JButton("Consulta Clientes");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) 
-			{
-				
-			}
-		});
-		btnNewButton.setBounds(557, 587, 549, 284);
-		contentPane.add(btnNewButton);
 	}
 }
