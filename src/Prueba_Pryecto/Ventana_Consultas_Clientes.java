@@ -58,7 +58,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(45, 11, 602, 59);
+		panel.setBounds(0, 0, 701, 59);
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -77,12 +77,12 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 128, 128));
-		panel_2.setBounds(0, 30, 701, 57);
+		panel_2.setBounds(181, 29, 323, 66);
 		panel_1.add(panel_2);
 		panel_2.setLayout(null);
 		
 		JButton btn_BuscarCliente = new JButton("Buscar un cliente");
-		btn_BuscarCliente.setBounds(205, 5, 291, 45);
+		btn_BuscarCliente.setBounds(10, 11, 291, 45);
 		panel_2.add(btn_BuscarCliente);
 		btn_BuscarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -95,7 +95,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(255, 128, 128));
-		panel_3.setBounds(0, 127, 701, 57);
+		panel_3.setBounds(181, 125, 323, 57);
 		panel_1.add(panel_3);
 		
 		JButton btn_EliminarCliente_1 = new JButton("Préstamos");
@@ -105,7 +105,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		
 		JPanel panel_3_1 = new JPanel();
 		panel_3_1.setBackground(new Color(255, 128, 128));
-		panel_3_1.setBounds(0, 225, 701, 57);
+		panel_3_1.setBounds(181, 225, 323, 57);
 		panel_1.add(panel_3_1);
 		
 		JButton btn_EliminarCliente = new JButton("Eliminar un cliente");
