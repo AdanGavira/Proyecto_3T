@@ -70,7 +70,7 @@ public class Ventana_Consultas_Libros extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 192));
-		panel_1.setBounds(0, 130, 884, 62);
+		panel_1.setBounds(287, 139, 265, 62);
 		contentPane.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
@@ -91,7 +91,7 @@ public class Ventana_Consultas_Libros extends JFrame {
 		
 		JPanel panel_2 = new JPanel();
 		panel_2.setBackground(new Color(0, 128, 192));
-		panel_2.setBounds(0, 224, 884, 62);
+		panel_2.setBounds(287, 224, 265, 62);
 		contentPane.add(panel_2);
 		
 		JButton btn_BuscarLibros = new JButton("Buscar Libros");
@@ -109,7 +109,7 @@ public class Ventana_Consultas_Libros extends JFrame {
 		
 		JPanel panel_3 = new JPanel();
 		panel_3.setBackground(new Color(0, 128, 192));
-		panel_3.setBounds(0, 316, 884, 62);
+		panel_3.setBounds(287, 316, 265, 62);
 		contentPane.add(panel_3);
 		
 		JButton btn_EliminarLibro = new JButton("Eliminar Libro");

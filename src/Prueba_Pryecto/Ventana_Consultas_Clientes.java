@@ -72,12 +72,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		panel_1.setBackground(new Color(0, 128, 192));
 		panel_1.setBounds(0, 84, 701, 312);
 		contentPane.add(panel_1);
-		GridBagLayout gbl_panel_1 = new GridBagLayout();
-		gbl_panel_1.columnWidths = new int[]{350, 350, 0};
-		gbl_panel_1.rowHeights = new int[]{379, 0};
-		gbl_panel_1.columnWeights = new double[]{0.0, 0.0, Double.MIN_VALUE};
-		gbl_panel_1.rowWeights = new double[]{1.0, Double.MIN_VALUE};
-		panel_1.setLayout(gbl_panel_1);
+
 		
 		JButton btn_BuscarCliente = new JButton("Buscar un cliente");
 		btn_BuscarCliente.addActionListener(new ActionListener() {
@@ -93,9 +88,7 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		gbc_btn_BuscarCliente.gridy = 0;
 		panel_1.add(btn_BuscarCliente, gbc_btn_BuscarCliente);
 		btn_BuscarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_BuscarCliente.setBackground(new Color(255, 128, 128));
-		
-		JButton btn_EliminarCliente = new JButton("Eliminar un cliente");
+
 		btn_EliminarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String id = (String)JOptionPane.showInputDialog(
@@ -116,6 +109,5 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		gbc_btn_EliminarCliente.gridy = 0;
 		panel_1.add(btn_EliminarCliente, gbc_btn_EliminarCliente);
 		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
-		btn_EliminarCliente.setBackground(new Color(255, 128, 128));
 	}
 }
