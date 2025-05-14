@@ -70,9 +70,27 @@ public class Ventana_Consultas_Clientes extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 192));
-		panel_1.setBounds(0, 84, 701, 312);
+		panel_1.setBounds(0, 84, 701, 59);
 		contentPane.add(panel_1);
-
+		
+		JPanel panel_1_1 = new JPanel();
+		panel_1_1.setBackground(new Color(0, 128, 192));
+		panel_1_1.setBounds(0, 294, 701, 59);
+		contentPane.add(panel_1_1);		
+		
+		JButton btn_EliminarCliente = new JButton("Eliminar un cliente");
+		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel_1_1.add(btn_EliminarCliente);
+		
+		JPanel panel_1_2 = new JPanel();
+		panel_1_2.setBackground(new Color(0, 128, 192));
+		panel_1_2.setBounds(0, 182, 701, 59);
+		contentPane.add(panel_1_2);
+		
+		JButton btn_Prestamos = new JButton("Prestámos");
+		btn_Prestamos.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel_1_2.add(btn_Prestamos);
+		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
 		JButton btn_BuscarCliente = new JButton("Buscar un cliente");
 		btn_BuscarCliente.addActionListener(new ActionListener() {
@@ -81,16 +99,11 @@ public class Ventana_Consultas_Clientes extends JFrame {
 				buscar_clientes.setVisible(true);
 			}
 		});
-		GridBagConstraints gbc_btn_BuscarCliente = new GridBagConstraints();
-		gbc_btn_BuscarCliente.fill = GridBagConstraints.BOTH;
-		gbc_btn_BuscarCliente.insets = new Insets(0, 0, 0, 5);
-		gbc_btn_BuscarCliente.gridx = 0;
-		gbc_btn_BuscarCliente.gridy = 0;
-		panel_1.add(btn_BuscarCliente, gbc_btn_BuscarCliente);
-		btn_BuscarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
 
 		btn_EliminarCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Usuario cliente = new Usuario();
 				String id = (String)JOptionPane.showInputDialog(
 									btn_EliminarCliente,
 				                    "Introduce el ID del cliente que quieres eliminar",
@@ -100,14 +113,30 @@ public class Ventana_Consultas_Clientes extends JFrame {
 				                    null, 
 				                    isAlwaysOnTop()
 				                    );
-				//Añadir consulta de eliminación
+				if (cliente.existeCliente(id)) {
+					cliente.eliminarUsuario(id);
+				} else {
+					JOptionPane.showMessageDialog(btn_EliminarCliente,
+						    "Este cliente no existe",
+						    "Error en el ID",
+						    JOptionPane.ERROR_MESSAGE);
+				}
 			}
 		});
+		
+		GridBagConstraints gbc_btn_BuscarCliente = new GridBagConstraints();
+		gbc_btn_BuscarCliente.fill = GridBagConstraints.BOTH;
+		gbc_btn_BuscarCliente.insets = new Insets(0, 0, 0, 5);
+		gbc_btn_BuscarCliente.gridx = 0;
+		gbc_btn_BuscarCliente.gridy = 0;
+		panel_1.add(btn_BuscarCliente, gbc_btn_BuscarCliente);
+		btn_BuscarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
 		GridBagConstraints gbc_btn_EliminarCliente = new GridBagConstraints();
 		gbc_btn_EliminarCliente.fill = GridBagConstraints.BOTH;
 		gbc_btn_EliminarCliente.gridx = 1;
 		gbc_btn_EliminarCliente.gridy = 0;
-		panel_1.add(btn_EliminarCliente, gbc_btn_EliminarCliente);
-		btn_EliminarCliente.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel_1_1.add(btn_EliminarCliente, gbc_btn_EliminarCliente);
+		
 	}
 }
