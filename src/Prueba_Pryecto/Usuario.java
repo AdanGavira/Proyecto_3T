@@ -118,7 +118,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 				return conexion.ejecutarSelect("SELECT * FROM cliente");
 			}
 			else {
-				return conexion.ejecutarSelect("SELECT * FROM cliente WHERE "+filtro+" = '"+valor+"';");
+				return conexion.ejecutarSelect("SELECT * FROM libro WHERE "+filtro+" = '"+valor+"';");
 			}
 			
 		} catch (SQLException e) {
@@ -138,23 +138,6 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 			e.printStackTrace();
 		}
 		return null;
-	}
-	
-	public boolean existeCliente(String ID) {
-		try {
-			conexion.conectar();
-			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM cliente WHERE ID = '"+ID+"'");
-			while(resultado.next()) {
-				String tem_ID = resultado.getString("ID");
-				if (!tem_ID.isEmpty()) {
-					return true;
-				} else return false;
-			}
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		return false;
 	}
 	
 	
