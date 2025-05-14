@@ -128,5 +128,17 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		return null;
 	}
 	
+	public ResultSet buscarLibrosPrestados (int ID) {
+		try {
+			conexion.conectar();
+			conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente = "+ID);
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
 	
 }

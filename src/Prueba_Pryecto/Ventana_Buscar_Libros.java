@@ -134,7 +134,8 @@ public class Ventana_Buscar_Libros extends JFrame {
 				textArea.setVisible(true);
 				textArea.setText(null);
 				try {
-					ResultSet resultado = libro.buscarLibro((String)comboBox_Filtro_1.getSelectedItem(), textField_Valor.getText());
+					
+					ResultSet resultado = libro.buscarLibro((String)comboBox_Filtro_1.getSelectedItem(), textField_Valor.getText()); //Guarda los datos de la consulta para imprimirlos
 					while(resultado.next()) {
 						String tem_Titulo = resultado.getString("Titulo");
 						String tem_Autor = resultado.getString("Autor");
@@ -143,6 +144,8 @@ public class Ventana_Buscar_Libros extends JFrame {
 						String tem_Categoria = resultado.getString("Categoria");
 						int tem_cliente = resultado.getInt("id_cliente");
 						
+						//id_cliente siempre se imprime aunque los libros elegidos no estén prestados
+						//Imprime el resultado de la consulta en el textArea
 						textArea.setText(textArea.getText()+"Titulo: "+tem_Titulo+" Autor: "+tem_Autor+" ISBN: "+tem_ISBN+" Fecha de publicación: "+tem_Fecha+" Categoría: "+tem_Categoria+" ID_Cliente: "+tem_cliente+"\n");
 					}
 				} catch (SQLException e1) {
