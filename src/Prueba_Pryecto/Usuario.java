@@ -86,7 +86,7 @@ public class Usuario {
 		this.correo = correo;
 	}
 	
-public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int ano, String correo) {
+public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int ano, String correo) { //Añadir un cliente a la base de datos
 		
 		try {
 			conexion.conectar();
@@ -100,7 +100,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		
 	}
 	
-	public void eliminarUsuario(String ID) {
+	public void eliminarUsuario(String ID) { //Eliminar un cliente de la base de datos
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("DELETE FROM cliente WHERE ID = '"+ID+"';");
@@ -111,7 +111,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		}
 	}
 	
-	public ResultSet buscarUsuario (String filtro, String valor) {
+	public ResultSet buscarUsuario (String filtro, String valor) { //Buscar un cliente en la base de datos a través de un filtro y un valor
 		try {
 			conexion.conectar();
 			if (filtro.equals("Todo")) {
@@ -122,13 +122,13 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("ERROR AL BUSCAR USUARIO");
+			System.out.println("ERROR AL BUSCAR CLIENTE");
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public boolean existeCliente(String ID) {
+	public boolean existeCliente(String ID) { //Comprobar si existe el cliente dentro de la base de datos
 		try {
 			conexion.conectar();
 			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM cliente WHERE ID = '"+ID+"'");
@@ -145,7 +145,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		return false;
 	}
 	
-	public ResultSet buscarLibrosPrestados (String ID) {
+	public ResultSet buscarLibrosPrestados (String ID) { //Buscar los libros prestados a un cliente específico
 		try {
 			conexion.conectar();
 			return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente = '"+ID+"'");
