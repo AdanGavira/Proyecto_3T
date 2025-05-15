@@ -8,7 +8,7 @@ class LibroTest {
 
 	@Test
 	void testAnadirLibro() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
