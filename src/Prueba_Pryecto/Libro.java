@@ -63,7 +63,7 @@ public class Libro {
 		this.prestado = prestado;
 	}
 	
-public void anadirLibro(String ISBN, String nombre, String autor, String categoria, int dia_publicacion, int mes_publicacion, int ano_publicacion) {
+public void anadirLibro(String ISBN, String nombre, String autor, String categoria, int dia_publicacion, int mes_publicacion, int ano_publicacion) { // Añadir un libro nuevo a la base de datos
 		
 		try {
 			conexion.conectar();
@@ -77,7 +77,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		
 	}
 	
-	public void eliminarLibro(String ISBN) {
+	public void eliminarLibro(String ISBN) { // Eliminar un libro de la base de datos
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("DELETE FROM libro WHERE ISBN = '"+ISBN+"';");
@@ -88,7 +88,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		}
 	}
 	
-	public ResultSet buscarLibro (String filtro, String valor) {
+	public ResultSet buscarLibro (String filtro, String valor) { // Buscar libros en la base de datos a través de un filtro y un valor
 		try {
 			conexion.conectar();
 			if (filtro.equals("Todo")) {
@@ -106,7 +106,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		return null;
 	}
 	
-	public boolean isPrestado() {
+	public boolean isPrestado() { // Comprobar si un libro está prestado
 		boolean isPrestado = false;
 		try {
 			conexion.conectar();
@@ -126,7 +126,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		return isPrestado;
 	}
 	
-	public void prestarLibro(int ID_Cliente, String ISBN) {
+	public void prestarLibro(int ID_Cliente, String ISBN) { // Prestar un libro actualizando su campo de id_cliente en la base de datos a través de su ISBN
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = '"+ID_Cliente+"' WHERE ISBN = '"+ISBN+"'");
@@ -136,7 +136,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		}
 	}
 	
-	public boolean existeLibro(String ISBN) {
+	public boolean existeLibro(String ISBN) { // Comprobar si existe el libro en la base de datos
 		try {
 			conexion.conectar();
 			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"'");
@@ -147,13 +147,13 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 				} else return false;
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
+			System.out.println("ERROR AL BUSCAR");
 			e.printStackTrace();
 		}
 		return false;
 	}
 	
-	public void devolverLibro(String ISBN) {
+	public void devolverLibro(String ISBN) { // Actualizar el id_cliente del libro a NULL para "devolverlo"
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = NULL WHERE `libro`.`ISBN` = '"+ISBN+"'");
