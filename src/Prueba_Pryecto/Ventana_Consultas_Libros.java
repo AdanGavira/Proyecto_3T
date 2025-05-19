@@ -74,17 +74,17 @@ public class Ventana_Consultas_Libros extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btn_AñadirLibro = new JButton("Añadir Libro");
-		btn_AñadirLibro.setForeground(new Color(0, 0, 0));
-		btn_AñadirLibro.addActionListener(new ActionListener() {
+		JButton btn_AnadirLibro = new JButton("Anadir Libro");
+		btn_AnadirLibro.setForeground(new Color(0, 0, 0));
+		btn_AnadirLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Ventana_Anadir_Libro anadir_libro = new Ventana_Anadir_Libro();
 				anadir_libro.setVisible(true);
 			}
 		});
-		panel_1.add(btn_AñadirLibro);
-		btn_AñadirLibro.setBackground(new Color(0, 255, 0));
-		btn_AñadirLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
+		panel_1.add(btn_AnadirLibro);
+		btn_AnadirLibro.setBackground(new Color(0, 255, 0));
+		btn_AnadirLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
 		
 		JLabel label = new JLabel("");
 		panel_1.add(label);

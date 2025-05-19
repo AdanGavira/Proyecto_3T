@@ -67,7 +67,7 @@ public class Ventana_Prestamos extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JLabel lbl_Titulo = new JLabel("PRESTÁMOS");
+		JLabel lbl_Titulo = new JLabel("PRESTAMOS");
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbl_Titulo.setForeground(Color.WHITE);
 		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));

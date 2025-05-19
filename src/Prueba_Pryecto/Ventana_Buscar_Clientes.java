@@ -14,6 +14,7 @@ import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
@@ -101,7 +102,7 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		gbc_comboBox_Filtro.gridy = 0;
 		panel_1.add(comboBox_Filtro, gbc_comboBox_Filtro);
 		comboBox_Filtro.setFont(new Font("Arial", Font.BOLD, 15));
-		comboBox_Filtro.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "Apellido", "ID", "Todo"}));
+		comboBox_Filtro.setModel(new DefaultComboBoxModel(new String[] {"Nombre", "Apellidos", "ID", "Todo"}));
 		comboBox_Filtro.setToolTipText("Seleccionar");
 		
 		textField_Valor = new JTextField();
@@ -113,17 +114,17 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		panel_1.add(textField_Valor, gbc_textField_Valor);
 		textField_Valor.setColumns(10);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(0, 128, 192));
-		panel_2.setBounds(10, 147, 769, 316);
-		contentPane.add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 134, 769, 329);
+		contentPane.add(scrollPane);
+		scrollPane.setVisible(false);
 		
 		JTextArea textArea = new JTextArea();
-		panel_2.add(textArea);
+		scrollPane.setViewportView(textArea);
 		textArea.setEditable(false);
 		textArea.setVisible(false);
+		textArea.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 15));
 		
 		JButton btn_Buscar = new JButton("Buscar");
 		GridBagConstraints gbc_btn_Buscar = new GridBagConstraints();
@@ -136,6 +137,7 @@ public class Ventana_Buscar_Clientes extends JFrame {
 				textArea.setVisible(true);
 				Usuario cliente = new Usuario();
 				textArea.setVisible(true);
+				scrollPane.setVisible(true);
 				textArea.setText(null);
 				try {
 					

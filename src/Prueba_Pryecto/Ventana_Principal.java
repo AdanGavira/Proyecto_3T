@@ -60,7 +60,7 @@ public class Ventana_Principal extends JFrame {
 		contentPane.setLayout(null);
 		
 		//titulo de la aplicación 
-		JLabel lbl_titulo = new JLabel("LA BIBLIOTECA DEL GÉNESIS");
+		JLabel lbl_titulo = new JLabel("LA BIBLIOTECA DEL GENESIS");
 		lbl_titulo.setBounds(5, 5, 547, 282);
 		lbl_titulo.setHorizontalAlignment(SwingConstants.RIGHT);
 		lbl_titulo.setBackground(new Color(245, 227, 200));
@@ -94,7 +94,7 @@ public class Ventana_Principal extends JFrame {
 		contentPane.add(btn_Registro_Usuarios);
 		
 		//Botón consulta de libros
-		JButton btn_Consulta_Libros = new JButton(" Consultas de libros");
+		JButton btn_Consulta_Libros = new JButton("Consultas de libros");
 		btn_Consulta_Libros.setBounds(5, 587, 547, 284);
 		btn_Consulta_Libros.setBorderPainted(false);
 		btn_Consulta_Libros.setContentAreaFilled(false);
@@ -112,7 +112,7 @@ public class Ventana_Principal extends JFrame {
 		contentPane.add(btn_Consulta_Libros);
 		
 		//Botón Préstamo de libros
-		JButton btn_Prestamos_Libros = new JButton("Préstamo de libros");
+		JButton btn_Prestamos_Libros = new JButton("Prestamo de libros");
 		btn_Prestamos_Libros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{

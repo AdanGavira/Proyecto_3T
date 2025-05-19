@@ -41,7 +41,7 @@ public class Ventana_Prestamos_Libros extends JFrame {
 		panel.setBounds(281, 11, 323, 47);
 		getContentPane().add(panel);
 		
-		JLabel lblNewLabel = new JLabel("Préstamo de Libros");
+		JLabel lblNewLabel = new JLabel("Prestamo de Libros");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
 		panel.add(lblNewLabel);
@@ -120,7 +120,7 @@ public class Ventana_Prestamos_Libros extends JFrame {
 				Libro libro = new Libro();
 				try {
 					if (libro.existeLibro(text_ISBN.getText())) {
-						if (libro.isPrestado()) {
+						if (libro.isPrestado(text_ISBN.getText())) {
 							JOptionPane.showMessageDialog(btn_Prestar,
 								    "Este libro ya está prestado",
 								    "Libro prestado",
@@ -162,7 +162,7 @@ public class Ventana_Prestamos_Libros extends JFrame {
 			{
 				Libro libro = new Libro();
 				if (libro.existeLibro(text_ISBN.getText())) {
-					if (libro.isPrestado()) {
+					if (libro.isPrestado(text_ISBN.getText())) {
 						libro.devolverLibro(text_ISBN.getText());		
 					} else {
 						JOptionPane.showMessageDialog(btn_Prestar,
