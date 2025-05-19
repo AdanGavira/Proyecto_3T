@@ -16,14 +16,7 @@ public class Usuario {
 	String correo;
 	ArrayList<Libro> librosPrestados = new ArrayList<>();
 	
-	public Usuario(String nombre, String apellidos, int dia, int mes, int anno, String correo) {
-		this.nombre = nombre;
-		this.apellidos = apellidos;
-		this.dia = dia;
-		this.mes = mes;
-		this.anno = anno;
-		this.correo = correo;
-	}
+	//Constructor
 	
 	public Usuario() {
 		this.nombre = "";

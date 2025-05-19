@@ -14,6 +14,8 @@ public class Libro {
 	boolean prestado;
 	int id_cliente;
 	
+	//Constructor
+	
 	public Libro () {
 		this.ISBN = "";
 		this.nombre = "";
@@ -63,7 +65,7 @@ public class Libro {
 		this.prestado = prestado;
 	}
 	
-public void anadirLibro(String ISBN, String nombre, String autor, String categoria, int dia_publicacion, int mes_publicacion, int ano_publicacion) { // Añadir un libro nuevo a la base de datos
+	public void anadirLibro(String ISBN, String nombre, String autor, String categoria, int dia_publicacion, int mes_publicacion, int ano_publicacion) { // Añadir un libro nuevo a la base de datos
 		
 		try {
 			conexion.conectar();
@@ -94,7 +96,7 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 			if (filtro.equals("Todo")) {
 				return conexion.ejecutarSelect("SELECT * FROM libro");
 			} else if (filtro.equals("Prestados")) {
-				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente != NULL;");
+				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente IS NOT NULL;");
 			} else {
 				return conexion.ejecutarSelect("SELECT * FROM libro WHERE "+filtro+" = '"+valor+"';");
 			}
@@ -106,11 +108,12 @@ public void anadirLibro(String ISBN, String nombre, String autor, String categor
 		return null;
 	}
 	
-	public boolean isPrestado() { // Comprobar si un libro está prestado
+	public boolean isPrestado(String ISBN) { // Comprobar si el libro está prestado
 		boolean isPrestado = false;
 		try {
 			conexion.conectar();
-			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente IS NOT NULL");
+			//ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"' AND id_cliente IS NOT NULL");
+			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"'");
 			while(resultado.next()) {
 				int tem_cliente = resultado.getInt("id_cliente");
 				if (tem_cliente != 0) {

@@ -27,6 +27,7 @@ import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import javax.swing.JScrollPane;
 
 public class Ventana_Buscar_Libros extends JFrame {
 
@@ -116,14 +117,13 @@ public class Ventana_Buscar_Libros extends JFrame {
 		gbc_textField_Valor.gridy = 0;
 		panel_1.add(textField_Valor, gbc_textField_Valor);
 		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(0, 128, 192));
-		panel_2.setBounds(10, 128, 761, 315);
-		contentPane.add(panel_2);
-		panel_2.setLayout(new GridLayout(0, 1, 0, 0));
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(10, 127, 761, 316);
+		contentPane.add(scrollPane);
+		scrollPane.setVisible(false);
 		
 		JTextArea textArea = new JTextArea();
-		panel_2.add(textArea);
+		scrollPane.setViewportView(textArea);
 		textArea.setEditable(false);
 		textArea.setVisible(false);
 		
@@ -132,6 +132,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				Libro libro = new Libro();
 				textArea.setVisible(true);
+				scrollPane.setVisible(true);
 				textArea.setText(null);
 				try {
 					
@@ -164,6 +165,8 @@ public class Ventana_Buscar_Libros extends JFrame {
 		gbc_btn_Buscar_1.gridx = 3;
 		gbc_btn_Buscar_1.gridy = 0;
 		panel_1.add(btn_Buscar_1, gbc_btn_Buscar_1);
+		
+		
 		
 		
 		
