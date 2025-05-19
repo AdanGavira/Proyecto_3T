@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 13-05-2025 a las 12:44:08
+-- Tiempo de generación: 19-05-2025 a las 11:01:27
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -31,9 +31,23 @@ CREATE TABLE `cliente` (
   `ID` int(3) NOT NULL,
   `Nombre` varchar(40) NOT NULL,
   `Apellidos` varchar(40) NOT NULL,
-  `Fecha de nacimiento` date NOT NULL,
-  `Correo electrónico` varchar(40) NOT NULL
+  `Fecha_de_nacimiento` date NOT NULL,
+  `Email` varchar(40) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `cliente`
+--
+
+INSERT INTO `cliente` (`ID`, `Nombre`, `Apellidos`, `Fecha_de_nacimiento`, `Email`) VALUES
+(1, 'María', 'González Pérez', '1985-03-15', 'maria.gonzalez@email.com'),
+(2, 'Carlos', 'Martín Ruiz', '1992-07-22', 'carlos.martin@email.com'),
+(3, 'Laura', 'Fernández López', '1978-11-30', 'laura.fernandez@email.com'),
+(4, 'Javier', 'Sánchez Díaz', '1989-05-18', 'javier.sanchez@email.com'),
+(5, 'Ana', 'Rodríguez García', '1995-09-10', 'ana.rodriguez@email.com'),
+(6, 'David', 'Pérez Castro', '1982-12-05', 'david.perez@email.com'),
+(7, 'Sofía', 'Jiménez Mendoza', '1990-02-28', 'sofia.jimenez@email.com'),
+(8, 'Pedro', 'Torres Ortega', '1975-08-14', 'pedro.torres@email.com');
 
 -- --------------------------------------------------------
 
@@ -42,13 +56,27 @@ CREATE TABLE `cliente` (
 --
 
 CREATE TABLE `libro` (
-  `Título` varchar(50) NOT NULL,
+  `Titulo` varchar(50) NOT NULL,
   `Autor` varchar(40) NOT NULL,
   `ISBN` varchar(20) NOT NULL,
-  `Fecha de publicación` varchar(20) NOT NULL,
-  `Categoría` varchar(30) NOT NULL,
-  `id_cliente` int(3) NOT NULL
+  `Fecha_de_publicacion` date NOT NULL,
+  `Categoria` varchar(30) NOT NULL,
+  `id_cliente` int(3) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `libro`
+--
+
+INSERT INTO `libro` (`Titulo`, `Autor`, `ISBN`, `Fecha_de_publicacion`, `Categoria`, `id_cliente`) VALUES
+('El principito', 'Antoine de Saint-Exupéry', '9780156012195', '1943-04-06', 'Infantil', 1),
+('Cien años de soledad', 'Gabriel García Márquez', '9780307474728', '1967-05-30', 'Drama', NULL),
+('1984', 'George Orwell', '9780451524935', '1949-06-08', 'Drama', NULL),
+('It', 'Stephen King', '9788401021356', '1986-09-15', 'Terror', 8),
+('La sombra del viento', 'Carlos Ruiz Zafón', '9788408079545', '2001-03-01', 'Drama', NULL),
+('Don Quijote de la Mancha', 'Miguel de Cervantes', '9788420412146', '1605-01-16', 'Drama', NULL),
+('Los juegos del hambre', 'Suzanne Collins', '9788427202122', '2008-09-14', 'Accion', NULL),
+('Harry Potter y la piedra filosofal', 'J.K. Rowling', '9788478884456', '1997-06-26', 'Infantil', NULL);
 
 --
 -- Índices para tablas volcadas
@@ -76,7 +104,7 @@ ALTER TABLE `libro`
 -- AUTO_INCREMENT de la tabla `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `ID` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Restricciones para tablas volcadas
