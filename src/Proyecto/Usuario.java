@@ -131,6 +131,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 					return true;
 				} else return false;
 			}
+			conexion.desconectar();
 		} catch (SQLException e) {
 			System.out.println("ERROR AL BUSCAR USUARIO");
 			e.printStackTrace();
@@ -142,7 +143,6 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		try {
 			conexion.conectar();
 			return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_usuario = '"+ID+"'");
-			
 		} catch (SQLException e) {
 			System.out.println("ERROR AL BUSCAR LIBROS");
 			e.printStackTrace();
