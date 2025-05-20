@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;
 
-import Prueba_Pryecto.ConexionMySQL;
-import Prueba_Pryecto.Libro;
+import Proyecto.ConexionMySQL;
+import Proyecto.Libro;
 
 
 class LibroTest {

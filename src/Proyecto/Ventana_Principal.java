@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.EventQueue;
 
@@ -59,7 +59,8 @@ public class Ventana_Principal extends JFrame {
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
-		//titulo de la aplicación 
+		// CONTENIDO DE LA VENTANA
+		
 		JLabel lbl_titulo = new JLabel("LA BIBLIOTECA DEL GENESIS");
 		lbl_titulo.setBounds(5, 5, 547, 282);
 		lbl_titulo.setHorizontalAlignment(SwingConstants.RIGHT);
@@ -67,7 +68,7 @@ public class Ventana_Principal extends JFrame {
 		lbl_titulo.setFont(new Font("Tahoma", Font.PLAIN, 40));
 		contentPane.add(lbl_titulo);
 		
-		//Logotipo biblioteca
+		
 		final JLabel lblDelGenesis = new JLabel("");
 		lblDelGenesis.setBounds(557, 5, 552, 282);
 		lblDelGenesis.setBackground(new Color(245, 227, 200));
@@ -75,8 +76,9 @@ public class Ventana_Principal extends JFrame {
 		lblDelGenesis.setIcon(new ImageIcon(Ventana_Principal.class.getResource("/image/Logotipo_Biblioteca_del_Génesis 256x256.png")));
 		contentPane.add(lblDelGenesis);
 		
-		//Botón registro clientes
-		JButton btn_Registro_Usuarios = new JButton("Registro de clientes");
+		// BOTONES
+		
+		JButton btn_Registro_Usuarios = new JButton("Registro de usuarios");
 		btn_Registro_Usuarios.setBounds(557, 292, 552, 284);
 		btn_Registro_Usuarios.setBorderPainted(false);
 		btn_Registro_Usuarios.setContentAreaFilled(false);
@@ -93,7 +95,7 @@ public class Ventana_Principal extends JFrame {
 		});
 		contentPane.add(btn_Registro_Usuarios);
 		
-		//Botón consulta de libros
+		
 		JButton btn_Consulta_Libros = new JButton("Consultas de libros");
 		btn_Consulta_Libros.setBounds(5, 587, 547, 284);
 		btn_Consulta_Libros.setBorderPainted(false);
@@ -111,7 +113,7 @@ public class Ventana_Principal extends JFrame {
 		});
 		contentPane.add(btn_Consulta_Libros);
 		
-		//Botón Préstamo de libros
+		
 		JButton btn_Prestamos_Libros = new JButton("Prestamo de libros");
 		btn_Prestamos_Libros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
@@ -130,22 +132,22 @@ public class Ventana_Principal extends JFrame {
 	
 		contentPane.add(btn_Prestamos_Libros);
 		
-		//Botón consulta clientes
-		JButton btn_Consultas_Clientes = new JButton("Consulta Clientes");
-		btn_Consultas_Clientes.setBounds(559, 587, 547, 284);
-		btn_Consultas_Clientes.setBorderPainted(false);
-		btn_Consultas_Clientes.setContentAreaFilled(false);
+	
+		JButton btn_Consultas_Usuarios = new JButton("Consulta Usuarios");
+		btn_Consultas_Usuarios.setBounds(559, 587, 547, 284);
+		btn_Consultas_Usuarios.setBorderPainted(false);
+		btn_Consultas_Usuarios.setContentAreaFilled(false);
 		ImageIcon icono6 = new ImageIcon(Ventana_Principal.class.getResource("/image/consulta_clientes_escala.png")); //imagen
-		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Clientes.getWidth(), btn_Consultas_Clientes.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del boton
+		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Usuarios.getWidth(), btn_Consultas_Usuarios.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del boton
 		ImageIcon iconoAjustado6 = new ImageIcon (imagen6);
-		btn_Consultas_Clientes.setIcon(iconoAjustado6);
-		btn_Consultas_Clientes.addActionListener(new ActionListener() {
+		btn_Consultas_Usuarios.setIcon(iconoAjustado6);
+		btn_Consultas_Usuarios.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
-				Ventana_Consultas_Clientes C6 = new Ventana_Consultas_Clientes();
+				Ventana_Consultas_Usuarios C6 = new Ventana_Consultas_Usuarios();
 				C6.setVisible(true);
 			}
 		});
-		contentPane.add(btn_Consultas_Clientes);
+		contentPane.add(btn_Consultas_Usuarios);
 	}
 }

@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.EventQueue;
 
@@ -33,6 +33,8 @@ import com.toedter.components.JSpinField;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
 import com.toedter.calendar.JDayChooser;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
 
 public class Ventana_Registro_Usuario extends JFrame {
 
@@ -66,13 +68,15 @@ public class Ventana_Registro_Usuario extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 893, 575);
 		contentPane = new JPanel();
-		contentPane.setBackground(new Color(255, 255, 255));
+		contentPane.setBackground(new Color(0, 128, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		setLocationRelativeTo(null);
+		
+		// CONTENIDO DE LA VENTANA
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 128, 128));
@@ -141,16 +145,28 @@ public class Ventana_Registro_Usuario extends JFrame {
 		lbl_DatosGenerales.setFont(new Font("Tahoma", Font.BOLD, 20));
 		
 		JPanel panel_1 = new JPanel();
-		panel_1.setBounds(202, 25, 438, 47);
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setBounds(0, 0, 877, 56);
 		contentPane.add(panel_1);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{877, 0};
+		gbl_panel_1.rowHeights = new int[]{56, 0};
+		gbl_panel_1.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_1.setLayout(gbl_panel_1);
 		
 		JLabel lbl_RegistroUsuarios = new JLabel("REGISTRO DE USUARIOS");
-		panel_1.add(lbl_RegistroUsuarios);
-		lbl_RegistroUsuarios.setForeground(new Color(0, 0, 0));
+		GridBagConstraints gbc_lbl_RegistroUsuarios = new GridBagConstraints();
+		gbc_lbl_RegistroUsuarios.gridx = 0;
+		gbc_lbl_RegistroUsuarios.gridy = 0;
+		panel_1.add(lbl_RegistroUsuarios, gbc_lbl_RegistroUsuarios);
+		lbl_RegistroUsuarios.setForeground(new Color(255, 255, 255));
 		lbl_RegistroUsuarios.setHorizontalAlignment(SwingConstants.CENTER);
 		lbl_RegistroUsuarios.setBackground(new Color(240, 240, 240));
 		lbl_RegistroUsuarios.setToolTipText("");
 		lbl_RegistroUsuarios.setFont(new Font("Tahoma", Font.BOLD, 30));
+		
+		// BOTONES
 		
 		JButton btn_Enviar = new JButton("Enviar");
 		btn_Enviar.setForeground(new Color(0, 0, 0));
@@ -158,8 +174,6 @@ public class Ventana_Registro_Usuario extends JFrame {
 		btn_Enviar.setFont(new Font("Segoe UI Variable", Font.PLAIN, 15));
 		btn_Enviar.setBounds(180, 345, 89, 23);
 		panel.add(btn_Enviar);
-		
-		// EL CORREO ELECTRÓNICO DEBE CONTENER "@"
 		
 		btn_Enviar.addActionListener(new ActionListener() {
 		    @Override

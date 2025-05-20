@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import javax.swing.JFrame;
 import java.awt.Color;
@@ -36,15 +36,27 @@ public class Ventana_Prestamos_Libros extends JFrame {
 		setBackground(new Color(240, 240, 240));
 		getContentPane().setLayout(null);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(new Color(255, 255, 255));
-		panel.setBounds(281, 11, 323, 47);
-		getContentPane().add(panel);
+		// CONTENIDO DE LA VENTANA
 		
-		JLabel lblNewLabel = new JLabel("Prestamo de Libros");
+		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
+		panel.setBounds(0, 0, 884, 52);
+		getContentPane().add(panel);
+		GridBagLayout gbl_panel = new GridBagLayout();
+		gbl_panel.columnWidths = new int[]{442, 0};
+		gbl_panel.rowHeights = new int[]{52, 0};
+		gbl_panel.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel.setLayout(gbl_panel);
+		
+		JLabel lblNewLabel = new JLabel("PRESTÁMOS DE LIBROS");
+		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));
-		panel.add(lblNewLabel);
+		GridBagConstraints gbc_lblNewLabel = new GridBagConstraints();
+		gbc_lblNewLabel.gridx = 0;
+		gbc_lblNewLabel.gridy = 0;
+		panel.add(lblNewLabel, gbc_lblNewLabel);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(255, 128, 128));
@@ -112,6 +124,19 @@ public class Ventana_Prestamos_Libros extends JFrame {
 		panel_2.setBounds(0, 354, 884, 59);
 		getContentPane().add(panel_2);
 		panel_2.setLayout(null);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBounds(0, 264, 884, 59);
+		contentPane.add(panel_3);
+		panel_3.setLayout(new GridLayout(0, 1, 0, 0));
+		
+		JLabel lbl_Explicacion = new JLabel("Para devolver los libros es solo necesario introducir el ISBN del libro");
+		lbl_Explicacion.setForeground(new Color(255, 0, 0));
+		lbl_Explicacion.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl_Explicacion.setFont(new Font("Tahoma", Font.PLAIN, 25));
+		panel_3.add(lbl_Explicacion);
+		
+		// BOTONES
 		
 		JButton btn_Prestar = new JButton("Prestar");
 		btn_Prestar.addActionListener(new ActionListener() {
@@ -183,16 +208,7 @@ public class Ventana_Prestamos_Libros extends JFrame {
 		btn_Devolver.setBounds(409, 5, 126, 43);
 		panel_2.add(btn_Devolver);
 		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBounds(0, 264, 884, 59);
-		contentPane.add(panel_3);
-		panel_3.setLayout(new GridLayout(0, 1, 0, 0));
-		
-		JLabel lbl_Explicacion = new JLabel("Para devolver los libros es solo necesario introducir el ISBN del libro");
-		lbl_Explicacion.setForeground(new Color(255, 0, 0));
-		lbl_Explicacion.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Explicacion.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		panel_3.add(lbl_Explicacion);
+	
 		
 	
 	}

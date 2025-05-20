@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -25,7 +25,7 @@ import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 
-public class Ventana_Buscar_Clientes extends JFrame {
+public class Ventana_Buscar_Usuarios extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -38,7 +38,7 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ventana_Buscar_Clientes frame = new Ventana_Buscar_Clientes();
+					Ventana_Buscar_Usuarios frame = new Ventana_Buscar_Usuarios();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -50,7 +50,7 @@ public class Ventana_Buscar_Clientes extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ventana_Buscar_Clientes() {
+	public Ventana_Buscar_Usuarios() {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 805, 513);
 		contentPane = new JPanel();
@@ -62,12 +62,16 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		
 		setLocationRelativeTo(null);
 		
+		// CONTENIDO DE LA VENTANA
+		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
 		panel.setBounds(0, 0, 789, 56);
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JLabel lbl_Titulo = new JLabel("BUSCAR CLIENTES");
+		JLabel lbl_Titulo = new JLabel("BUSCAR USUARIOS");
+		lbl_Titulo.setForeground(new Color(255, 255, 255));
 		lbl_Titulo.setBackground(new Color(0, 0, 0));
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lbl_Titulo);
@@ -126,22 +130,24 @@ public class Ventana_Buscar_Clientes extends JFrame {
 		textArea.setVisible(false);
 		textArea.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 15));
 		
+		// BOTONES
+		
 		JButton btn_Buscar = new JButton("Buscar");
 		GridBagConstraints gbc_btn_Buscar = new GridBagConstraints();
-		gbc_btn_Buscar.fill = GridBagConstraints.BOTH;
+		gbc_btn_Buscar.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btn_Buscar.gridx = 3;
 		gbc_btn_Buscar.gridy = 0;
 		panel_1.add(btn_Buscar, gbc_btn_Buscar);
 		btn_Buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setVisible(true);
-				Usuario cliente = new Usuario();
+				Usuario usuario = new Usuario();
 				textArea.setVisible(true);
 				scrollPane.setVisible(true);
 				textArea.setText(null);
 				try {
 					
-					ResultSet resultado = cliente.buscarUsuario((String)comboBox_Filtro.getSelectedItem(), textField_Valor.getText()); //Guarda los datos de la consulta para imprimirlos
+					ResultSet resultado = usuario.buscarUsuario((String)comboBox_Filtro.getSelectedItem(), textField_Valor.getText()); //Guarda los datos de la consulta para imprimirlos
 					while(resultado.next()) {
 						String tem_ID = resultado.getString("ID");
 						String tem_Nombre = resultado.getString("Nombre");
@@ -151,7 +157,7 @@ public class Ventana_Buscar_Clientes extends JFrame {
 						
 						//
 						//Imprime el resultado de la consulta en el textArea
-						textArea.setText(textArea.getText()+"ID de cliente: "+tem_ID+" Nombre: "+tem_Nombre+" Apellidos: "+tem_Apellidos+" Fecha de nacimiento: "+tem_Fecha+" Correo Electrónico: "+tem_Email+"\n");
+						textArea.setText(textArea.getText()+"ID de Usuario: "+tem_ID+" Nombre: "+tem_Nombre+" Apellidos: "+tem_Apellidos+" Fecha de nacimiento: "+tem_Fecha+" Correo Electrónico: "+tem_Email+"\n");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block

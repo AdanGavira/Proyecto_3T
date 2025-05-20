@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -83,11 +83,11 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		
 		try {
 			conexion.conectar();
-			conexion.ejecutarInsertDeleteUpdate("INSERT INTO cliente (Nombre, Apellidos, Fecha_de_nacimiento, Email) VALUES ('"+nombre+"','"+apellidos+"','"+ano+"-"+mes+"-"+dia+"','"+correo+"')");
+			conexion.ejecutarInsertDeleteUpdate("INSERT INTO usuario (Nombre, Apellidos, Fecha_de_nacimiento, Email) VALUES ('"+nombre+"','"+apellidos+"','"+ano+"-"+mes+"-"+dia+"','"+correo+"')");
 			conexion.desconectar();
 			
 		} catch (SQLException e) {
-			System.out.println("ERROR AL AÑADIR CLIENTE");
+			System.out.println("ERROR AL AÑADIR USUARIO");
 			e.printStackTrace();
 		}
 		
@@ -96,10 +96,10 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 	public void eliminarUsuario(String ID) { //Eliminar un cliente de la base de datos
 		try {
 			conexion.conectar();
-			conexion.ejecutarInsertDeleteUpdate("DELETE FROM cliente WHERE ID = '"+ID+"';");
+			conexion.ejecutarInsertDeleteUpdate("DELETE FROM usuario WHERE ID = '"+ID+"';");
 			conexion.desconectar();
 		} catch (SQLException e) {
-			System.out.println("ERROR AL ELIMINAR CLIENTE");
+			System.out.println("ERROR AL ELIMINAR USUARIO");
 			e.printStackTrace();
 		}
 	}
@@ -108,23 +108,23 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		try {
 			conexion.conectar();
 			if (filtro.equals("Todo")) {
-				return conexion.ejecutarSelect("SELECT * FROM cliente");
+				return conexion.ejecutarSelect("SELECT * FROM usuario");
 			}
 			else {
-				return conexion.ejecutarSelect("SELECT * FROM cliente WHERE "+filtro+" = '"+valor+"';");
+				return conexion.ejecutarSelect("SELECT * FROM usuario WHERE "+filtro+" = '"+valor+"';");
 			}
 			
 		} catch (SQLException e) {
-			System.out.println("ERROR AL BUSCAR CLIENTE");
+			System.out.println("ERROR AL BUSCAR USUARIO");
 			e.printStackTrace();
 		}
 		return null;
 	}
 	
-	public boolean existeCliente(String ID) { //Comprobar si existe el cliente dentro de la base de datos
+	public boolean existeUsuario(String ID) { //Comprobar si existe el usuario dentro de la base de datos
 		try {
 			conexion.conectar();
-			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM cliente WHERE ID = '"+ID+"'");
+			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM usuario WHERE ID = '"+ID+"'");
 			while(resultado.next()) {
 				String tem_ID = resultado.getString("ID");
 				if (!tem_ID.isEmpty()) {
@@ -132,7 +132,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 				} else return false;
 			}
 		} catch (SQLException e) {
-			System.out.println("ERROR AL BUSCAR CLIENTE");
+			System.out.println("ERROR AL BUSCAR USUARIO");
 			e.printStackTrace();
 		}
 		return false;
@@ -141,7 +141,7 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 	public ResultSet buscarLibrosPrestados (String ID) { //Buscar los libros prestados a un cliente específico
 		try {
 			conexion.conectar();
-			return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente = '"+ID+"'");
+			return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_usuario = '"+ID+"'");
 			
 		} catch (SQLException e) {
 			System.out.println("ERROR AL BUSCAR LIBROS");

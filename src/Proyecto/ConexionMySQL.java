@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

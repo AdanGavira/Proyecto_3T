@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.EventQueue;
 
@@ -66,12 +66,17 @@ public class Ventana_Buscar_Libros extends JFrame {
 		
 		setLocationRelativeTo(null);
 		
+		// CONTENIDO DE LA VENTANA
+		
 		JPanel panel = new JPanel();
+		panel.setBackground(new Color(0, 0, 0));
 		panel.setBounds(0, 0, 789, 53);
 		contentPane.add(panel);
 		panel.setLayout(new GridLayout(0, 1, 0, 0));
 		
 		JLabel lbl_Titulo = new JLabel("BUSCAR LIBROS");
+		lbl_Titulo.setForeground(new Color(255, 255, 255));
+		lbl_Titulo.setBackground(new Color(0, 0, 0));
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.CENTER);
 		panel.add(lbl_Titulo);
 		lbl_Titulo.setFont(new Font("Trebuchet MS", Font.BOLD, 40));
@@ -127,6 +132,8 @@ public class Ventana_Buscar_Libros extends JFrame {
 		textArea.setEditable(false);
 		textArea.setVisible(false);
 		
+		// BOTONES
+		
 		JButton btn_Buscar_1 = new JButton("Buscar");
 		btn_Buscar_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -143,11 +150,11 @@ public class Ventana_Buscar_Libros extends JFrame {
 						String tem_ISBN = resultado.getString("ISBN");
 						String tem_Fecha = resultado.getString("Fecha_de_Publicacion");
 						String tem_Categoria = resultado.getString("Categoria");
-						int tem_cliente = resultado.getInt("id_cliente");
+						int tem_usuario = resultado.getInt("id_usuario");
 						
 						//id_cliente siempre se imprime aunque los libros elegidos no estén prestados
 						//Imprime el resultado de la consulta en el textArea
-						textArea.setText(textArea.getText()+"Titulo: "+tem_Titulo+" Autor: "+tem_Autor+" ISBN: "+tem_ISBN+" Fecha de publicación: "+tem_Fecha+" Categoría: "+tem_Categoria+" ID_Cliente: "+tem_cliente+"\n");
+						textArea.setText(textArea.getText()+"Titulo: "+tem_Titulo+" Autor: "+tem_Autor+" ISBN: "+tem_ISBN+" Fecha de publicación: "+tem_Fecha+" Categoría: "+tem_Categoria+" ID_Usuario: "+tem_usuario+"\n");
 					}
 				} catch (SQLException e1) {
 					// TODO Auto-generated catch block
@@ -161,7 +168,7 @@ public class Ventana_Buscar_Libros extends JFrame {
 		btn_Buscar_1.setFont(new Font("Tahoma", Font.PLAIN, 20));
 		btn_Buscar_1.setBackground(Color.RED);
 		GridBagConstraints gbc_btn_Buscar_1 = new GridBagConstraints();
-		gbc_btn_Buscar_1.fill = GridBagConstraints.BOTH;
+		gbc_btn_Buscar_1.fill = GridBagConstraints.HORIZONTAL;
 		gbc_btn_Buscar_1.gridx = 3;
 		gbc_btn_Buscar_1.gridy = 0;
 		panel_1.add(btn_Buscar_1, gbc_btn_Buscar_1);

@@ -7,8 +7,8 @@ import java.sql.SQLException;
 
 import org.junit.jupiter.api.Test;
 
-import Prueba_Pryecto.ConexionMySQL;
-import Prueba_Pryecto.Usuario;
+import Proyecto.ConexionMySQL;
+import Proyecto.Usuario;
 
 class UsuarioTest {
 	
@@ -77,8 +77,8 @@ class UsuarioTest {
 
 	@Test
 	void testExisteCliente() {
-		assertTrue(usuario.existeCliente("7"), "Comprueba que un usuario existe");
-		assertFalse(usuario.existeCliente("10"), "Comprueba que un usuario no existe");
+		assertTrue(usuario.existeUsuario("7"), "Comprueba que un usuario existe");
+		assertFalse(usuario.existeUsuario("10"), "Comprueba que un usuario no existe");
 	}
 
 	@Test

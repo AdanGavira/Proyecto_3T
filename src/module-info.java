@@ -1,5 +1,5 @@
 module Proyecto_3T {
-	exports Prueba_Pryecto;
+	exports Proyecto;
 	exports test;
 
 	requires java.desktop;
