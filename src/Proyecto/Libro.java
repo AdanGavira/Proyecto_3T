@@ -94,9 +94,9 @@ public class Libro {
 		try {
 			conexion.conectar();
 			if (filtro.equals("Todo")) {
-				return conexion.ejecutarSelect("SELECT * FROM libro");
+				return conexion.ejecutarSelect("SELECT * FROM libro");	
 			} else if (filtro.equals("Prestados")) {
-				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_usuario IS NOT NULL;");
+				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_usuario IS NOT NULL;");	
 			} else {
 				return conexion.ejecutarSelect("SELECT * FROM libro WHERE "+filtro+" = '"+valor+"';");
 			}
@@ -113,13 +113,14 @@ public class Libro {
 		try {
 			conexion.conectar();
 			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"'");
+			
 			while(resultado.next()) {
 				int tem_cliente = resultado.getInt("id_usuario");
 				if (tem_cliente != 0) {
 					isPrestado = true;
 				}
 			}
-			
+			conexion.desconectar();
 			
 		} catch (SQLException e) {
 			System.out.println("ERROR AL BUSCAR");
@@ -132,6 +133,7 @@ public class Libro {
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_usuario` = '"+ID_Usuario+"' WHERE ISBN = '"+ISBN+"'");
+			conexion.desconectar();
 		} catch (Exception e) {
 			System.out.println("ERROR EN EL PRÉSTAMO");
 			e.printStackTrace();
@@ -148,6 +150,7 @@ public class Libro {
 					return true;
 				} else return false;
 			}
+			conexion.desconectar();
 		} catch (SQLException e) {
 			System.out.println("ERROR AL BUSCAR");
 			e.printStackTrace();
@@ -159,6 +162,7 @@ public class Libro {
 		try {
 			conexion.conectar();
 			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_usuario` = NULL WHERE `libro`.`ISBN` = '"+ISBN+"'");
+			conexion.desconectar();
 		} catch (SQLException e) {
 			System.out.println("ERROR AL DEVOLVER LIBRO");
 			e.printStackTrace();
