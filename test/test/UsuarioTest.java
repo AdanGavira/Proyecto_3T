@@ -76,7 +76,7 @@ class UsuarioTest {
 		}
 
 	@Test
-	void testExisteCliente() {
+	void testExisteUsuario() {
 		assertTrue(usuario.existeUsuario("7"), "Comprueba que un usuario existe");
 		assertFalse(usuario.existeUsuario("10"), "Comprueba que un usuario no existe");
 	}
@@ -89,20 +89,20 @@ class UsuarioTest {
 		int cont= 0;
 		while(resultado.next()) {
 			cont++;
-			assertEquals("8",resultado.getString("id_cliente"), "Comprueba que los libros están asociados al cliente indicado");
+			assertEquals("8",resultado.getString("id_usuario"), "Comprueba que los libros están asociados al usuario indicado");
 		}
 		
 		assertEquals(1, cont, "Comprobar que el numero de libros prestados al usuario indicado es correcto");
 	}
 	
-	void testBuscarLibrosPrestadosNoCliente() throws SQLException { //Caso para un cliente sin libros asociados
+	void testBuscarLibrosPrestadosNoUsuario() throws SQLException { //Caso para un cliente sin libros asociados
 		ResultSet resultado = usuario.buscarLibrosPrestados("2");
 		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
 		int cont= 0;
 		while(resultado.next()) {
 			cont++;
-			assertEquals("2",resultado.getString("id_cliente"), "Comprueba que los libros están asociados al cliente indicado");
+			assertEquals("2",resultado.getString("id_usuario"), "Comprueba que los libros están asociados al usuario indicado");
 		}
 		
 		assertEquals(0, cont, "Comprobar que el numero de libros prestados al usuario indicado es correcto");
