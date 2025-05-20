@@ -82,7 +82,7 @@ public class Ventana_Principal extends JFrame {
 		btn_Registro_Usuarios.setBounds(557, 292, 552, 284);
 		btn_Registro_Usuarios.setBorderPainted(false);
 		btn_Registro_Usuarios.setContentAreaFilled(false);
-		ImageIcon icono3 = new ImageIcon (Ventana_Principal.class.getResource("/image/registro_clientes_escala.png")); //imagen
+		ImageIcon icono3 = new ImageIcon (Ventana_Principal.class.getResource("/image/registro_de_usuarios_escala.png")); //imagen
 		Image imagen3 = icono3.getImage().getScaledInstance(btn_Registro_Usuarios.getWidth(), btn_Registro_Usuarios.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del botón
 		ImageIcon iconoAjustado3 = new ImageIcon (imagen3);
 		btn_Registro_Usuarios.setIcon(iconoAjustado3);
@@ -137,7 +137,7 @@ public class Ventana_Principal extends JFrame {
 		btn_Consultas_Usuarios.setBounds(559, 587, 547, 284);
 		btn_Consultas_Usuarios.setBorderPainted(false);
 		btn_Consultas_Usuarios.setContentAreaFilled(false);
-		ImageIcon icono6 = new ImageIcon(Ventana_Principal.class.getResource("/image/consulta_clientes_escala.png")); //imagen
+		ImageIcon icono6 = new ImageIcon(Ventana_Principal.class.getResource("/image/consulta_de_usuarios_escala.png")); //imagen
 		Image imagen6 = icono6.getImage().getScaledInstance(btn_Consultas_Usuarios.getWidth(), btn_Consultas_Usuarios.getHeight(), Image.SCALE_SMOOTH); //imagen a escala del boton
 		ImageIcon iconoAjustado6 = new ImageIcon (imagen6);
 		btn_Consultas_Usuarios.setIcon(iconoAjustado6);
