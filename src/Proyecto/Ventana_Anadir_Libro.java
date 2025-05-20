@@ -27,11 +27,8 @@ import javax.swing.ImageIcon;
 import com.toedter.components.JSpinField;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
-<<<<<<< Updated upstream:src/Proyecto/Ventana_Anadir_Libro.java
 import java.awt.GridLayout;
 import java.awt.GridBagLayout;
-=======
->>>>>>> Stashed changes:src/Prueba_Pryecto/Ventana_Anadir_Libro.java
 
 public class Ventana_Anadir_Libro extends JFrame {
 
@@ -76,7 +73,6 @@ public class Ventana_Anadir_Libro extends JFrame {
 		panel.setLayout(null);
 		
 		JLabel lbl_NombreFormulario = new JLabel("Nombre");
-<<<<<<< Updated upstream:src/Proyecto/Ventana_Anadir_Libro.java
 		lbl_NombreFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lbl_NombreFormulario.setBounds(133, 11, 76, 23);
 		panel.add(lbl_NombreFormulario);
@@ -84,45 +80,24 @@ public class Ventana_Anadir_Libro extends JFrame {
 		JLabel lbl_AutorFormulario = new JLabel("Autor");
 		lbl_AutorFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
 		lbl_AutorFormulario.setBounds(141, 63, 55, 14);
-=======
-		lbl_NombreFormulario.setFont(new Font("Franklin Gothic Medium", Font.BOLD, 20));
-		lbl_NombreFormulario.setBounds(133, 23, 76, 23);
-		panel.add(lbl_NombreFormulario);
-		
-		JLabel lbl_AutorFormulario = new JLabel("Autor");
-		lbl_AutorFormulario.setFont(new Font("Franklin Gothic Medium", Font.BOLD, 20));
-		lbl_AutorFormulario.setBounds(143, 77, 55, 14);
->>>>>>> Stashed changes:src/Prueba_Pryecto/Ventana_Anadir_Libro.java
 		panel.add(lbl_AutorFormulario);
 		
 		JLabel lbl_CategoriaFormulario = new JLabel("Categoría");
 		lbl_CategoriaFormulario.setFont(new Font("Times New Roman", Font.BOLD, 20));
-<<<<<<< Updated upstream:src/Proyecto/Ventana_Anadir_Libro.java
 		lbl_CategoriaFormulario.setBounds(120, 211, 89, 23);
-=======
-		lbl_CategoriaFormulario.setBounds(120, 226, 89, 23);
->>>>>>> Stashed changes:src/Prueba_Pryecto/Ventana_Anadir_Libro.java
 		panel.add(lbl_CategoriaFormulario);
 		
 		JTextArea textArea_Nombre = new JTextArea();
 		textArea_Nombre.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_Nombre.setBackground(new Color(192, 192, 192));
 		textArea_Nombre.setForeground(new Color(0, 0, 0));
-<<<<<<< Updated upstream:src/Proyecto/Ventana_Anadir_Libro.java
 		textArea_Nombre.setBounds(313, 12, 123, 22);
-=======
-		textArea_Nombre.setBounds(313, 23, 123, 22);
->>>>>>> Stashed changes:src/Prueba_Pryecto/Ventana_Anadir_Libro.java
 		panel.add(textArea_Nombre);
 		
 		JTextArea textArea_Autor = new JTextArea();
 		textArea_Autor.setFont(new Font("Monospaced", Font.PLAIN, 15));
 		textArea_Autor.setBackground(new Color(192, 192, 192));
-<<<<<<< Updated upstream:src/Proyecto/Ventana_Anadir_Libro.java
 		textArea_Autor.setBounds(313, 60, 123, 23);
-=======
-		textArea_Autor.setBounds(313, 73, 123, 23);
->>>>>>> Stashed changes:src/Prueba_Pryecto/Ventana_Anadir_Libro.java
 		panel.add(textArea_Autor);
 		
 		JComboBox comboBox = new JComboBox();
@@ -196,7 +171,6 @@ public class Ventana_Anadir_Libro extends JFrame {
 		btn_EliminarCampos.setBounds(313, 296, 130, 23);
 		panel.add(btn_EliminarCampos);
 		
-<<<<<<< Updated upstream:src/Proyecto/Ventana_Anadir_Libro.java
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 0, 0));
 		panel_1.setBounds(0, 0, 828, 62);
@@ -219,42 +193,5 @@ public class Ventana_Anadir_Libro extends JFrame {
 		lbl_ANADIR_LIBRO.setFont(new Font("SansSerif", Font.BOLD, 36));
 		
 		
-=======
-		JComboBox comboBox = new JComboBox();
-		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Accion", "Drama", "Infantil", "Terror"}));
-		comboBox.setBounds(313, 244, 123, 22);
-		panel.add(comboBox);
-		
-		JSpinField spinField = new JSpinField();
-		spinField.setMinimum(1);
-		spinField.setMaximum(31);
-		spinField.setBounds(266, 128, 44, 20);
-		panel.add(spinField);
-		
-		JMonthChooser monthChooser = new JMonthChooser();
-		monthChooser.setMonth(0);
-		monthChooser.setBounds(320, 128, 96, 20);
-		panel.add(monthChooser);
-		
-		JYearChooser yearChooser = new JYearChooser();
-		yearChooser.setBounds(426, 128, 78, 20);
-		panel.add(yearChooser);
-		
-		JLabel lblNewLabel = new JLabel("Fecha de publicación");
-		lblNewLabel.setBounds(133, 128, 46, 14);
-		panel.add(lblNewLabel);
-		
-		JLabel lblNewLabel_1 = new JLabel("ISBN");
-		lblNewLabel_1.setFont(new Font("Franklin Gothic Medium", Font.PLAIN, 11));
-		lblNewLabel_1.setBounds(133, 182, 46, 14);
-		panel.add(lblNewLabel_1);
-		
-		JTextArea textArea_Nombre_1 = new JTextArea();
-		textArea_Nombre_1.setForeground(Color.BLACK);
-		textArea_Nombre_1.setFont(new Font("Monospaced", Font.PLAIN, 15));
-		textArea_Nombre_1.setBackground(Color.LIGHT_GRAY);
-		textArea_Nombre_1.setBounds(313, 177, 123, 22);
-		panel.add(textArea_Nombre_1);
->>>>>>> Stashed changes:src/Prueba_Pryecto/Ventana_Anadir_Libro.java
 	}
 }
