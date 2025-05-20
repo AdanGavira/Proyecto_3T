@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.EventQueue;
 
@@ -27,6 +27,8 @@ import javax.swing.ImageIcon;
 import com.toedter.components.JSpinField;
 import com.toedter.calendar.JMonthChooser;
 import com.toedter.calendar.JYearChooser;
+import java.awt.GridLayout;
+import java.awt.GridBagLayout;
 
 public class Ventana_Anadir_Libro extends JFrame {
 
@@ -56,17 +58,13 @@ public class Ventana_Anadir_Libro extends JFrame {
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 844, 522);
 		contentPane = new JPanel();
+		contentPane.setBackground(new Color(0, 128, 192));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
 		setLocationRelativeTo(null);
-		
-		JLabel lbl_ANADIR_LIBRO = new JLabel("ANADIR LIBRO");
-		lbl_ANADIR_LIBRO.setFont(new Font("SansSerif", Font.BOLD, 36));
-		lbl_ANADIR_LIBRO.setBounds(276, 11, 276, 50);
-		contentPane.add(lbl_ANADIR_LIBRO);
 		
 		JPanel panel = new JPanel();
 		panel.setBackground(new Color(255, 255, 255));
@@ -172,6 +170,27 @@ public class Ventana_Anadir_Libro extends JFrame {
 		btn_EliminarCampos.setBackground(new Color(255, 0, 0));
 		btn_EliminarCampos.setBounds(313, 296, 130, 23);
 		panel.add(btn_EliminarCampos);
+		
+		JPanel panel_1 = new JPanel();
+		panel_1.setBackground(new Color(0, 0, 0));
+		panel_1.setBounds(0, 0, 828, 62);
+		contentPane.add(panel_1);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{828, 0};
+		gbl_panel_1.rowHeights = new int[]{62, 0};
+		gbl_panel_1.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_1.setLayout(gbl_panel_1);
+		
+		// CONTENIDO DE LA VENTANA
+		
+		JLabel lbl_ANADIR_LIBRO = new JLabel("AÑADIR LIBRO");
+		lbl_ANADIR_LIBRO.setForeground(new Color(255, 255, 255));
+		GridBagConstraints gbc_lbl_ANADIR_LIBRO = new GridBagConstraints();
+		gbc_lbl_ANADIR_LIBRO.gridx = 0;
+		gbc_lbl_ANADIR_LIBRO.gridy = 0;
+		panel_1.add(lbl_ANADIR_LIBRO, gbc_lbl_ANADIR_LIBRO);
+		lbl_ANADIR_LIBRO.setFont(new Font("SansSerif", Font.BOLD, 36));
 		
 		
 	}

@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -96,7 +96,7 @@ public class Libro {
 			if (filtro.equals("Todo")) {
 				return conexion.ejecutarSelect("SELECT * FROM libro");
 			} else if (filtro.equals("Prestados")) {
-				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_cliente IS NOT NULL;");
+				return conexion.ejecutarSelect("SELECT * FROM libro WHERE id_usuario IS NOT NULL;");
 			} else {
 				return conexion.ejecutarSelect("SELECT * FROM libro WHERE "+filtro+" = '"+valor+"';");
 			}
@@ -112,10 +112,9 @@ public class Libro {
 		boolean isPrestado = false;
 		try {
 			conexion.conectar();
-			//ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"' AND id_cliente IS NOT NULL");
 			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE ISBN = '"+ISBN+"'");
 			while(resultado.next()) {
-				int tem_cliente = resultado.getInt("id_cliente");
+				int tem_cliente = resultado.getInt("id_usuario");
 				if (tem_cliente != 0) {
 					isPrestado = true;
 				}
@@ -129,10 +128,10 @@ public class Libro {
 		return isPrestado;
 	}
 	
-	public void prestarLibro(int ID_Cliente, String ISBN) { // Prestar un libro actualizando su campo de id_cliente en la base de datos a través de su ISBN
+	public void prestarLibro(int ID_Usuario, String ISBN) { // Prestar un libro actualizando su campo de id_cliente en la base de datos a través de su ISBN
 		try {
 			conexion.conectar();
-			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = '"+ID_Cliente+"' WHERE ISBN = '"+ISBN+"'");
+			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_usuario` = '"+ID_Usuario+"' WHERE ISBN = '"+ISBN+"'");
 		} catch (Exception e) {
 			System.out.println("ERROR EN EL PRÉSTAMO");
 			e.printStackTrace();
@@ -159,7 +158,7 @@ public class Libro {
 	public void devolverLibro(String ISBN) { // Actualizar el id_cliente del libro a NULL para "devolverlo"
 		try {
 			conexion.conectar();
-			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_cliente` = NULL WHERE `libro`.`ISBN` = '"+ISBN+"'");
+			conexion.ejecutarInsertDeleteUpdate("UPDATE `libro` SET `id_usuario` = NULL WHERE `libro`.`ISBN` = '"+ISBN+"'");
 		} catch (SQLException e) {
 			System.out.println("ERROR AL DEVOLVER LIBRO");
 			e.printStackTrace();

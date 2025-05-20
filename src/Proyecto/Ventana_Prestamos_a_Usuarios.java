@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.EventQueue;
 
@@ -26,7 +26,7 @@ import java.awt.event.ActionEvent;
 import javax.swing.JScrollBar;
 import javax.swing.JScrollPane;
 
-public class Ventana_Prestamos extends JFrame {
+public class Ventana_Prestamos_a_Usuarios extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -39,7 +39,7 @@ public class Ventana_Prestamos extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Ventana_Prestamos frame = new Ventana_Prestamos();
+					Ventana_Prestamos_a_Usuarios frame = new Ventana_Prestamos_a_Usuarios();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -51,8 +51,8 @@ public class Ventana_Prestamos extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Ventana_Prestamos() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	public Ventana_Prestamos_a_Usuarios() {
+		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setBounds(100, 100, 758, 536);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(0, 128, 192));
@@ -61,17 +61,27 @@ public class Ventana_Prestamos extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		// CONTENIDO DE LA VENTANA
+		
 		JPanel panel = new JPanel();
 		panel.setBounds(0, 0, 742, 59);
 		panel.setBackground(Color.BLACK);
 		contentPane.add(panel);
-		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		GridBagLayout gbl_panel = new GridBagLayout();
+		gbl_panel.columnWidths = new int[]{742, 0};
+		gbl_panel.rowHeights = new int[]{59, 0};
+		gbl_panel.columnWeights = new double[]{0.0, Double.MIN_VALUE};
+		gbl_panel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel.setLayout(gbl_panel);
 		
-		JLabel lbl_Titulo = new JLabel("PRESTAMOS");
+		JLabel lbl_Titulo = new JLabel("PRESTÁMOS A USUARIOS");
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbl_Titulo.setForeground(Color.WHITE);
 		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
-		panel.add(lbl_Titulo);
+		GridBagConstraints gbc_lbl_Titulo = new GridBagConstraints();
+		gbc_lbl_Titulo.gridx = 0;
+		gbc_lbl_Titulo.gridy = 0;
+		panel.add(lbl_Titulo, gbc_lbl_Titulo);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setForeground(new Color(255, 0, 0));
@@ -80,11 +90,11 @@ public class Ventana_Prestamos extends JFrame {
 		contentPane.add(panel_1);
 		panel_1.setLayout(new GridLayout(0, 1, 0, 0));
 		
-		JLabel lbl_Instrucciones = new JLabel("Introduce el ID del cliente para consultar sus libros prestados");
+		JLabel lbl_Instrucciones = new JLabel("Introduce el ID del usuario para consultar sus libros prestados");
 		lbl_Instrucciones.setForeground(new Color(255, 255, 255));
 		lbl_Instrucciones.setBackground(new Color(255, 128, 128));
 		lbl_Instrucciones.setHorizontalAlignment(SwingConstants.CENTER);
-		lbl_Instrucciones.setFont(new Font("Tahoma", Font.BOLD, 24));
+		lbl_Instrucciones.setFont(new Font("Tahoma", Font.BOLD, 22));
 		panel_1.add(lbl_Instrucciones);
 		
 		JPanel panel_2 = new JPanel();
@@ -111,6 +121,7 @@ public class Ventana_Prestamos extends JFrame {
 		JScrollPane scrollPane = new JScrollPane();
 		scrollPane.setBounds(10, 185, 722, 301);
 		contentPane.add(scrollPane);
+		scrollPane.setVisible(false);
 		
 		JTextArea textArea = new JTextArea();
 		scrollPane.setViewportView(textArea);
@@ -118,26 +129,29 @@ public class Ventana_Prestamos extends JFrame {
 		textArea.setVisible(false);
 		textArea.setFont(new Font("Microsoft Sans Serif", Font.PLAIN, 15));
 		
+		// BOTONES
+		
 		JButton btn_Buscar = new JButton("Buscar");
 		btn_Buscar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				textArea.setVisible(true);
+				scrollPane.setVisible(true);
 				textArea.setText(null);
-				Usuario cliente = new Usuario();
-				if (cliente.existeCliente(textField_IdValor.getText())) {		
+				Usuario usuario = new Usuario();
+				if (usuario.existeUsuario(textField_IdValor.getText())) {		
 					try {
 						
-						ResultSet resultado = cliente.buscarLibrosPrestados(textField_IdValor.getText());
+						ResultSet resultado = usuario.buscarLibrosPrestados(textField_IdValor.getText());
 						while(resultado.next()) {
 							String tem_Titulo = resultado.getString("Titulo");
 							String tem_Autor = resultado.getString("Autor");
 							String tem_ISBN = resultado.getString("ISBN");
 							String tem_Fecha = resultado.getString("Fecha_de_Publicacion");
 							String tem_Categoria = resultado.getString("Categoria");
-							int tem_cliente = resultado.getInt("id_cliente");
+							int tem_usuario = resultado.getInt("id_usuario");
 							
 							//Imprime el resultado de la consulta en el textArea
-							textArea.setText(textArea.getText()+"Titulo: "+tem_Titulo+" Autor: "+tem_Autor+" ISBN: "+tem_ISBN+" Fecha de publicación: "+tem_Fecha+" Categoría: "+tem_Categoria+" ID_Cliente: "+tem_cliente+"\n");
+							textArea.setText(textArea.getText()+"Titulo: "+tem_Titulo+" Autor: "+tem_Autor+" ISBN: "+tem_ISBN+" Fecha de publicación: "+tem_Fecha+" Categoría: "+tem_Categoria+" ID_Usuario: "+tem_usuario+"\n");
 						}
 					} catch (SQLException e1) {
 						// TODO Auto-generated catch block
@@ -146,7 +160,7 @@ public class Ventana_Prestamos extends JFrame {
 					
 				} else {
 					JOptionPane.showMessageDialog(btn_Buscar,
-						    "Este cliente no existe",
+						    "Este usuario no existe",
 						    "Error en el ID",
 						    JOptionPane.ERROR_MESSAGE);
 				}

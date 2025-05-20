@@ -1,4 +1,4 @@
-package Prueba_Pryecto;
+package Proyecto;
 
 import java.awt.EventQueue;
 
@@ -20,6 +20,9 @@ import javax.swing.BoxLayout;
 
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.Insets;
 
 public class Ventana_Consultas_Libros extends JFrame {
 
@@ -57,6 +60,8 @@ public class Ventana_Consultas_Libros extends JFrame {
 		setLocationRelativeTo(null);
 		contentPane.setLayout(null);
 		
+		// CONTENIDO DE LA VENTANA
+		
 		JPanel panel = new JPanel();
 		contentPane.add(panel);
 		panel.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
@@ -70,11 +75,40 @@ public class Ventana_Consultas_Libros extends JFrame {
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBackground(new Color(0, 128, 192));
-		panel_1.setBounds(287, 139, 265, 62);
+		panel_1.setBounds(0, 139, 884, 62);
 		contentPane.add(panel_1);
-		panel_1.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
 		
-		JButton btn_AnadirLibro = new JButton("Anadir Libro");
+		JPanel panel_2 = new JPanel();
+		panel_2.setBackground(new Color(0, 128, 192));
+		panel_2.setBounds(0, 224, 884, 62);
+		contentPane.add(panel_2);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(new Color(0, 128, 192));
+		panel_3.setBounds(0, 316, 884, 62);
+		contentPane.add(panel_3);
+		
+		JPanel panel_4 = new JPanel();
+		panel_4.setBackground(new Color(0, 0, 0));
+		panel_4.setBounds(0, 0, 884, 59);
+		contentPane.add(panel_4);
+		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
+		
+		JLabel lbl_Titulo = new JLabel("CONSULTAS DE LIBROS");
+		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
+		lbl_Titulo.setForeground(new Color(255, 255, 255));
+		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
+		panel_4.add(lbl_Titulo);
+		GridBagLayout gbl_panel_1 = new GridBagLayout();
+		gbl_panel_1.columnWidths = new int[]{294, 0};
+		gbl_panel_1.rowHeights = new int[]{62, 0};
+		gbl_panel_1.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panel_1.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_1.setLayout(gbl_panel_1);
+		
+		// BOTONES
+		
+		JButton btn_AnadirLibro = new JButton("Añadir Libro");
 		btn_AnadirLibro.setForeground(new Color(0, 0, 0));
 		btn_AnadirLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -82,22 +116,24 @@ public class Ventana_Consultas_Libros extends JFrame {
 				anadir_libro.setVisible(true);
 			}
 		});
-		panel_1.add(btn_AnadirLibro);
-		btn_AnadirLibro.setBackground(new Color(0, 255, 0));
+		GridBagConstraints gbc_btn_AnadirLibro = new GridBagConstraints();
+		gbc_btn_AnadirLibro.gridx = 0;
+		gbc_btn_AnadirLibro.gridy = 0;
+		panel_1.add(btn_AnadirLibro, gbc_btn_AnadirLibro);
 		btn_AnadirLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
-		
-		JLabel label = new JLabel("");
-		panel_1.add(label);
-		
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(0, 128, 192));
-		panel_2.setBounds(287, 224, 265, 62);
-		contentPane.add(panel_2);
+		GridBagLayout gbl_panel_2 = new GridBagLayout();
+		gbl_panel_2.columnWidths = new int[]{442, 0};
+		gbl_panel_2.rowHeights = new int[]{62, 0};
+		gbl_panel_2.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panel_2.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_2.setLayout(gbl_panel_2);
 		
 		JButton btn_BuscarLibros = new JButton("Buscar Libros");
 		btn_BuscarLibros.setForeground(new Color(0, 0, 0));
-		panel_2.add(btn_BuscarLibros);
-		btn_BuscarLibros.setBackground(new Color(255, 128, 64));
+		GridBagConstraints gbc_btn_BuscarLibros = new GridBagConstraints();
+		gbc_btn_BuscarLibros.gridx = 0;
+		gbc_btn_BuscarLibros.gridy = 0;
+		panel_2.add(btn_BuscarLibros, gbc_btn_BuscarLibros);
 		btn_BuscarLibros.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) 
 			{
@@ -106,16 +142,19 @@ public class Ventana_Consultas_Libros extends JFrame {
 			}
 		});
 		btn_BuscarLibros.setFont(new Font("Tahoma", Font.BOLD, 30));
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(new Color(0, 128, 192));
-		panel_3.setBounds(287, 316, 265, 62);
-		contentPane.add(panel_3);
+		GridBagLayout gbl_panel_3 = new GridBagLayout();
+		gbl_panel_3.columnWidths = new int[]{884, 0};
+		gbl_panel_3.rowHeights = new int[]{62, 0};
+		gbl_panel_3.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panel_3.rowWeights = new double[]{0.0, Double.MIN_VALUE};
+		panel_3.setLayout(gbl_panel_3);
 		
 		JButton btn_EliminarLibro = new JButton("Eliminar Libro");
-		btn_EliminarLibro.setForeground(new Color(255, 255, 255));
-		panel_3.add(btn_EliminarLibro);
-		btn_EliminarLibro.setBackground(new Color(255, 0, 0));
+		btn_EliminarLibro.setForeground(new Color(0, 0, 0));
+		GridBagConstraints gbc_btn_EliminarLibro = new GridBagConstraints();
+		gbc_btn_EliminarLibro.gridx = 0;
+		gbc_btn_EliminarLibro.gridy = 0;
+		panel_3.add(btn_EliminarLibro, gbc_btn_EliminarLibro);
 		btn_EliminarLibro.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Libro libro = new Libro();
@@ -140,17 +179,5 @@ public class Ventana_Consultas_Libros extends JFrame {
 			}
 		});
 		btn_EliminarLibro.setFont(new Font("Tahoma", Font.BOLD, 30));
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setBackground(new Color(255, 255, 255));
-		panel_4.setBounds(0, 0, 884, 59);
-		contentPane.add(panel_4);
-		panel_4.setLayout(new FlowLayout(FlowLayout.CENTER, 5, 5));
-		
-		JLabel lbl_Titulo = new JLabel("CONSULTAS DE LIBROS");
-		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
-		lbl_Titulo.setForeground(new Color(0, 0, 0));
-		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));
-		panel_4.add(lbl_Titulo);
 	}
 }
