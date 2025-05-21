@@ -20,7 +20,7 @@ public class LibroTest {
 	@Test
 	void testBuscarLibroTodo() throws SQLException {
 		ResultSet resultado = libro.buscarLibro("Todo", null);
-		assertNotNull(resultado);
+		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
 		int cont= 0;
 		while(resultado.next()) {
@@ -35,7 +35,7 @@ public class LibroTest {
 	@Test
 	void testBuscarLibroPrestados() throws SQLException {
 		ResultSet resultado = libro.buscarLibro("Prestados", null);
-		assertNotNull(resultado);
+		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
 		int cont= 0;
 		while(resultado.next()) {
@@ -50,7 +50,7 @@ public class LibroTest {
 	@Test
 	void testBuscarLibroTitulo() throws SQLException {
 		ResultSet resultado = libro.buscarLibro("Titulo", "El principito");
-		assertNotNull(resultado);
+		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
 		int cont= 0;
 		while(resultado.next()) {
@@ -65,7 +65,7 @@ public class LibroTest {
 	@Test
 	void testBuscarLibroAutor() throws SQLException {
 		ResultSet resultado = libro.buscarLibro("Autor", "Stephen King");
-		assertNotNull(resultado);
+		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
 		int cont= 0;
 		while(resultado.next()) {
@@ -80,7 +80,7 @@ public class LibroTest {
 	@Test
 	void testBuscarLibroISBN() throws SQLException {
 		ResultSet resultado = libro.buscarLibro("ISBN", "9788408079545");
-		assertNotNull(resultado);
+		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
 		int cont= 0;
 		while(resultado.next()) {

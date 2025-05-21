@@ -82,7 +82,7 @@ public class UsuarioTest {
 		}
 
 		@Test
-		void testBuscarLibrosPrestados() throws SQLException { //Caso para un cliente con libros asociados
+		void testBuscarLibrosPrestados() throws SQLException { //Caso para un usuario con libros asociados
 		ResultSet resultado = usuario.buscarLibrosPrestados("8");
 		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
@@ -96,7 +96,7 @@ public class UsuarioTest {
 		}
 	
 		@Test
-		void testBuscarLibrosPrestadosNoUsuario() throws SQLException { //Caso para un cliente sin libros asociados
+		void testBuscarLibrosPrestadosNoUsuario() throws SQLException { //Caso para un usuario sin libros asociados
 			ResultSet resultado = usuario.buscarLibrosPrestados("2");
 			assertNotNull(resultado); //Comprobar que el resultado no está vacío
 			
