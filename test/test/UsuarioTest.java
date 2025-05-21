@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import Proyecto.ConexionMySQL;
 import Proyecto.Usuario;
 
-class UsuarioTest {
+public class UsuarioTest {
 	
 	Usuario usuario = new Usuario();
 	ConexionMySQL conexion = new ConexionMySQL("root", "", "biblioteca");
