@@ -74,7 +74,7 @@ public class Ventana_Prestamos_a_Usuarios extends JFrame {
 		gbl_panel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lbl_Titulo = new JLabel("PRESTÁMOS A USUARIOS");
+		JLabel lbl_Titulo = new JLabel("PRESTAMOS A USUARIOS");
 		lbl_Titulo.setHorizontalAlignment(SwingConstants.TRAILING);
 		lbl_Titulo.setForeground(Color.WHITE);
 		lbl_Titulo.setFont(new Font("Tahoma", Font.BOLD, 40));

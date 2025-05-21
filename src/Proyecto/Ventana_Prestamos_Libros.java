@@ -49,7 +49,7 @@ public class Ventana_Prestamos_Libros extends JFrame {
 		gbl_panel.rowWeights = new double[]{0.0, Double.MIN_VALUE};
 		panel.setLayout(gbl_panel);
 		
-		JLabel lblNewLabel = new JLabel("PRESTÁMOS DE LIBROS");
+		JLabel lblNewLabel = new JLabel("PRESTAMOS DE LIBROS");
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 30));

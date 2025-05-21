@@ -124,7 +124,15 @@ public class Ventana_Consultas_Usuarios extends JFrame {
 				                    isAlwaysOnTop()
 				                    );
 				if (usuario.existeUsuario(id)) {
-					usuario.eliminarUsuario(id);
+					if (!usuario.isPrestado(id)) {
+						usuario.eliminarUsuario(id);
+					} else {
+						JOptionPane.showMessageDialog(btn_EliminarUsuario,
+							    "Este usuario tiene libros prestados, asegurate de devolverlos antes de eliminar el usuario",
+							    "Error al eliminar usuario",
+							    JOptionPane.ERROR_MESSAGE);
+					}
+					
 				} else {
 					JOptionPane.showMessageDialog(btn_EliminarUsuario,
 						    "Este usuario no existe",
