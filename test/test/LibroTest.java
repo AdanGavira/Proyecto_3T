@@ -11,7 +11,7 @@ import Proyecto.ConexionMySQL;
 import Proyecto.Libro;
 
 
-class LibroTest {
+public class LibroTest {
 	
 	Libro libro = new Libro();
 	ConexionMySQL conexion = new ConexionMySQL("root", "", "biblioteca");
