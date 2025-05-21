@@ -7,7 +7,7 @@ Registro de usuarios
 Añadir libros
 Búsqueda de libros en la biblioteca y usuarios registrados
 Eliminación de libros en la biblioteca y usuarios registrados
-Prestámo de libros a usuarios
+Prestámo y devolución de libros
 Búsqueda de libros prestados a usuarios
 Búsqueda de usuarios con libros prestados
 ```
