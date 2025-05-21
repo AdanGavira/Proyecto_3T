@@ -139,6 +139,26 @@ public void anadirUsuario(String nombre, String apellidos, int dia, int mes, int
 		return false;
 	}
 	
+	public boolean isPrestado(String ID) { // Comprobar si el usuario tiene libros prestados
+		boolean isPrestado = false;
+		try {
+			conexion.conectar();
+			ResultSet resultado = conexion.ejecutarSelect("SELECT * FROM libro WHERE id_usuario = '"+ID+"'");	
+			while(resultado.next()) {
+				String tem_cliente = resultado.getString("id_usuario");
+				if (tem_cliente.equals(ID)) {
+					isPrestado = true;
+				}
+			}
+			conexion.desconectar();
+			
+		} catch (SQLException e) {
+			System.out.println("ERROR AL BUSCAR");
+			e.printStackTrace();
+		}
+		return isPrestado;
+	}
+	
 	public ResultSet buscarLibrosPrestados (String ID) { //Buscar los libros prestados a un cliente específico
 		try {
 			conexion.conectar();

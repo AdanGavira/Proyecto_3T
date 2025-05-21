@@ -62,7 +62,7 @@ class UsuarioTest {
 		
 		@Test
 		void testBuscarUsuarioID() throws SQLException {
-			ResultSet resultado = usuario.buscarUsuario("ID", "7");
+			ResultSet resultado = usuario.buscarUsuario("ID", "2");
 			assertNotNull(resultado); //Comprobar que el resultado no está vacío
 			
 			int cont= 0;
@@ -75,14 +75,14 @@ class UsuarioTest {
 			
 		}
 
-	@Test
-	void testExisteUsuario() {
+		@Test
+		void testExisteUsuario() {
 		assertTrue(usuario.existeUsuario("7"), "Comprueba que un usuario existe");
 		assertFalse(usuario.existeUsuario("10"), "Comprueba que un usuario no existe");
-	}
+		}
 
-	@Test
-	void testBuscarLibrosPrestados() throws SQLException { //Caso para un cliente con libros asociados
+		@Test
+		void testBuscarLibrosPrestados() throws SQLException { //Caso para un cliente con libros asociados
 		ResultSet resultado = usuario.buscarLibrosPrestados("8");
 		assertNotNull(resultado); //Comprobar que el resultado no está vacío
 		
@@ -93,19 +93,26 @@ class UsuarioTest {
 		}
 		
 		assertEquals(1, cont, "Comprobar que el numero de libros prestados al usuario indicado es correcto");
-	}
-	
-	void testBuscarLibrosPrestadosNoUsuario() throws SQLException { //Caso para un cliente sin libros asociados
-		ResultSet resultado = usuario.buscarLibrosPrestados("2");
-		assertNotNull(resultado); //Comprobar que el resultado no está vacío
-		
-		int cont= 0;
-		while(resultado.next()) {
-			cont++;
-			assertEquals("2",resultado.getString("id_usuario"), "Comprueba que los libros están asociados al usuario indicado");
 		}
-		
-		assertEquals(0, cont, "Comprobar que el numero de libros prestados al usuario indicado es correcto");
-	}
+	
+		@Test
+		void testBuscarLibrosPrestadosNoUsuario() throws SQLException { //Caso para un cliente sin libros asociados
+			ResultSet resultado = usuario.buscarLibrosPrestados("2");
+			assertNotNull(resultado); //Comprobar que el resultado no está vacío
+			
+			int cont= 0;
+			while(resultado.next()) {
+				cont++;
+				assertEquals("2",resultado.getString("id_usuario"), "Comprueba que los libros están asociados al usuario indicado");
+			}
+			
+			assertEquals(0, cont, "Comprobar que el numero de libros prestados al usuario indicado es correcto");
+		}
+	
+		@Test
+		void testIsPrestado() {		
+			assertTrue(usuario.isPrestado("8"), "Comprueba si el usuario tiene libros prestados");
+			assertFalse(usuario.isPrestado("6"), "Comprueba si el usuario no tiene libros prestados");
+		}
 
 }
