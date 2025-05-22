@@ -1,7 +1,7 @@
 # Proyecto 3º Trimestre "Sistema de gestión de una biblioteca"
 ## Adán Gavira, Enrique De La Fuente, Moisés Ortiz
 ### ✍️ Descripción del proyecto
-Nuestro proyecto consiste en un sistema de gestión de una biblioteca, el cuál permite interactuar con usuarios y libros. El sistema contiene las siguientes funcionalidades:
+Nuestro proyecto consiste en un sistema de gestión de una biblioteca, el cuál permite interactuar con usuarios y libros a través de una interfaz gráfica. El sistema contiene las siguientes funcionalidades:
 ```
 Registro de usuarios
 Añadir libros
