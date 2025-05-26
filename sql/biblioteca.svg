@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE svg
+PUBLIC "-//W3C//DTD SVG 1.1//EN"
+       "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg viewBox="144 340 692 510" width="548px" height="170px" xmlns="http://www.w3.org/2000/svg" version="1.1">
+   <line x1="321" y1="485" x2="331" y2="485" style="stroke:#b0b;stroke-width:1;"/>
+   <line x1="507" y1="399" x2="517" y2="399" style="stroke:#b0b;stroke-width:1;"/>
+   <line x1="331" y1="485" x2="507" y2="399" style="stroke:#b0b;stroke-width:1;"/>
+   <line x1="328.5" y1="485" x2="324.96446609407" y2="488.53553390593" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="328.5" y1="485" x2="324.96446609407" y2="481.46446609407" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="512" y1="399" x2="508.46446609407" y2="402.53553390593" style="stroke:#b0b;stroke-width:2;"/>
+   <line x1="512" y1="399" x2="508.46446609407" y2="395.46446609407" style="stroke:#b0b;stroke-width:2;"/>
+   <rect width="162" height="20" x="159" y="355" style="fill:#007;stroke:black;"/>
+   <text width="162" height="20" x="164" y="369" style="fill:#fff;" font-family="Arial" font-size="16px"> libro</text>
+   <rect width="162" height="20" x="159" y="375" style="fill:none;stroke:black;"/>
+   <text width="162" height="20" x="164" y="389" style="fill:black;" font-family="Arial" font-size="16px">Titulo</text>
+   <rect width="162" height="20" x="159" y="395" style="fill:none;stroke:black;"/>
+   <text width="162" height="20" x="164" y="409" style="fill:black;" font-family="Arial" font-size="16px">Autor</text>
+   <rect width="162" height="20" x="159" y="415" style="fill:#aea;stroke:black;"/>
+   <text width="162" height="20" x="164" y="429" style="fill:black;" font-family="Arial" font-size="16px">ISBN</text>
+   <rect width="162" height="20" x="159" y="435" style="fill:none;stroke:black;"/>
+   <text width="162" height="20" x="164" y="449" style="fill:black;" font-family="Arial" font-size="16px">Fecha_de_publicacion</text>
+   <rect width="162" height="20" x="159" y="455" style="fill:none;stroke:black;"/>
+   <text width="162" height="20" x="164" y="469" style="fill:black;" font-family="Arial" font-size="16px">Categoria</text>
+   <rect width="162" height="20" x="159" y="475" style="fill:none;stroke:black;"/>
+   <text width="162" height="20" x="164" y="489" style="fill:black;" font-family="Arial" font-size="16px">id_usuario</text>
+   <rect width="160" height="20" x="517" y="369" style="fill:#007;stroke:black;"/>
+   <text width="160" height="20" x="522" y="383" style="fill:#fff;" font-family="Arial" font-size="16px"> usuario</text>
+   <rect width="160" height="20" x="517" y="389" style="fill:#aea;stroke:black;"/>
+   <text width="160" height="20" x="522" y="403" style="fill:black;" font-family="Arial" font-size="16px">ID</text>
+   <rect width="160" height="20" x="517" y="409" style="fill:none;stroke:black;"/>
+   <text width="160" height="20" x="522" y="423" style="fill:black;" font-family="Arial" font-size="16px">Nombre</text>
+   <rect width="160" height="20" x="517" y="429" style="fill:none;stroke:black;"/>
+   <text width="160" height="20" x="522" y="443" style="fill:black;" font-family="Arial" font-size="16px">Apellidos</text>
+   <rect width="160" height="20" x="517" y="449" style="fill:none;stroke:black;"/>
+   <text width="160" height="20" x="522" y="463" style="fill:black;" font-family="Arial" font-size="16px">Fecha_de_nacimiento</text>
+   <rect width="160" height="20" x="517" y="469" style="fill:none;stroke:black;"/>
+   <text width="160" height="20" x="522" y="483" style="fill:black;" font-family="Arial" font-size="16px">Email</text>
+</svg>
